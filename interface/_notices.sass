@@ -1,0 +1,92 @@
+#notices
+    position: absolute
+    left: 0
+    right: 0
+    top: 0
+    bottom: 0
+    z-index: 9998
+    
+    pointer-events: none
+    
+    +translate(0, 100%)
+    -webkit-transform: translate3d(0, 100%, 0)
+    
+    .notice_wrap
+        position: absolute
+        left: -2px
+        right: -2px
+        
+        +transition(all, 0.3s, ease-in-out)
+        
+        +translate(0, 0)
+        -webkit-transform: translate3d(0, 0, 0)
+        
+        .notice
+            position:relative
+            
+            pointer-events: all
+            
+            min-height: 36px
+            
+            background-color: $hover
+            // background: #2a3052 // blue
+            
+            &.positive
+                background: #416c0d
+            
+                &::before
+                    border: 1px solid #568f10
+            
+            &.error
+                background: #570000
+                
+                .icon
+                    color: yellow
+                
+                &::before
+                    border: 1px solid #830000
+            
+            border: 1px solid rgba(0,0,0,.5)
+            border-bottom: none
+            
+            &::before
+                content: " "
+                position: absolute
+                top: 1px
+                right: 1px
+                left: 1px
+                bottom: 0
+                
+
+                border: 1px solid white
+                border-bottom: none
+            
+            .icon
+                +float-left
+                
+                margin-top: 11px
+                margin-left: 11px
+                
+                height: 16px
+                width: 16px
+                
+                color: $dark_text
+            
+            .close_x
+                position: absolute
+                top: 11px
+                right: 11px
+            
+            .notice_text
+                +regular
+                +antialiased
+                
+                font-size: 1.2em
+                line-height: 1.6em
+                
+                padding-top: 6px
+                padding-bottom: 10px
+                padding-right: 40px
+                padding-left: 40px
+                
+                color: $dark_text

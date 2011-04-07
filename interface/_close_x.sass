@@ -1,0 +1,24 @@
+.close_x
+    cursor: pointer
+    
+    color: black
+    
+    &.white
+        color: white
+    
+    &::before
+        +icon_font
+        
+        font-size: 23.75px
+        content: "c"
+        vertical-align: -1px
+        
+        opacity: 0.5
+    
+    .mouse &:hover
+        &::before
+            opacity: 0.8
+    
+    &.active, .mouse &:active
+        &::before
+            opacity: 0.3

@@ -1,0 +1,36 @@
+.scroll
+    position: absolute
+    top: 0
+    right: 0
+    bottom: 0
+    left: 0
+
+#scroll_thumb
+    +border-radius(5px)
+    +background-clip(padding-box)
+    
+    position: relative
+    
+    background: rgba(0, 0, 0, 0.5)
+    
+    &::before
+        +border-radius(6px)
+        content: " "
+        position: absolute
+        top: -1px
+        right: -1px
+        left: -1px
+        bottom: -1px
+        
+        border: 1px solid rgba(255, 255, 255, 0.2)
+    
+    //border-width: 4px 4px 4px 4px
+    //-webkit-border-image: image-url("interface/arrow_2x.png") 8 8 8 8 round stretch
+    
+    &:hover
+        background-color: rgba(0,0,0,0.5)
+    &:active
+        background-color: rgba(0,0,0,0.6)
+
+@import touch
+@import mouse

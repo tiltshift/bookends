@@ -1,0 +1,39 @@
+@font-face
+    /* This declaration targets Internet Explorer */
+    font-family: 'Icons'
+    src: url('../fonts/icons-webfont.eot')
+
+@font-face
+    /* This declaration targets everything else */
+    font-family: 'Icons'
+    src: url(//:) format('no404'), url('../fonts/icons-webfont.woff') format('woff'), url('../fonts/icons-webfont.ttf') format('truetype'), url('../fonts/icons-webfont.svg#webfont2m2kHdfp') format('svg')
+    font-weight: normal
+    font-style: normal
+
+@mixin icon_font
+    font-family: 'Icons', sans-serif
+    -webkit-font-smoothing: antialiased
+    
+    font-size: 19px
+    line-height: 10px
+    font-weight: normal !important
+    font-style: normal !important
+
+.icon
+    &::before
+        +icon_font
+    
+    &.back_arrow::before
+        content: "<"
+    &.plus::before
+        content: "+"
+    &.check::before
+        content: "v"
+    &.info::before
+        content: "i"
+    &.error::before
+        content: "!"
+    &.down::before
+        content: "6"
+    &.settings::before
+        content:  "G"

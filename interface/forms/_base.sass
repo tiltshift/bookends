@@ -1,0 +1,105 @@
+@import formalize
++formalize
+
+form
+    position: relative
+    
+    padding-bottom: $margin * 2
+    
+    .form_wrap
+        padding: $margin 0
+    
+    .form_item
+        position: relative
+    
+    .form_element
+        position: relative
+        overflow: hidden
+        margin: 0 $margin
+        
+        .close_x
+            +transition(all, 0.15s, ease-in-out)
+            position: absolute
+            top: 16px
+            right: 0px
+            
+            padding-right: 4px
+            
+            +translate(100%, 0)
+            -webkit-transform: translate3d(100%, 0, 0)
+            
+            &.show
+                +translate(0, 0)
+                -webkit-transform: translate3d(0, 0, 0)
+
+label
+    display: block
+    
+    +bold
+    font-size: 12px
+    margin: 0 $margin
+
+input,
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="number"],
+select
+    +light
+    
+    font-size: 17px
+    
+    +border-radius(3px)
+    border: 1px solid $light_line
+    +box-shadow(rgba(0,0,0,.2), 0px, 1px, 3px, inset)
+    
+    margin: $margin 0
+    width: 100%
+    
+    .show_error &
+        background-color: $yellow
+    &.clearable
+        padding-right: 28px
+
+.select_arrow
+    position: absolute
+    right: 10px
+    top: 18px
+    
+    &::before
+        +icon_font
+        font-size: 29px
+        content: "6"
+        color: $light_text
+
+.submit
+    a
+        margin: 0 $margin
+        
+        padding: 5px 6px
+        
+        color: black
+        
+        +border-radius(3px)
+        
+        +light
+        
+        border: 1px solid $light_line
+        +box-shadow($light_line, 0px, 1px, 0px)
+        
+        font-size: 17px
+        
+        display: block
+        
+        background:
+            image: inline-image("images/interface/arrow.png")
+            repeat: no-repeat
+            position: right center
+            color: $green
+
+@media(-webkit-min-device-pixel-ratio: 2)
+    .submit a
+        background-image: inline-image("images/interface/arrow_2x.png")
+        +background-size(23px 18px)
+
+@import errors

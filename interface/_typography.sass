@@ -1,0 +1,37 @@
+// Typography
+
+@mixin bold
+    font:
+        family: HelveticaNeue-Bold, "Helvetica Neue Bold", "Helvetica Neue", Helvetica, Arial, sans-serif
+
+@mixin light
+    +antialiased
+    
+    font:
+        family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif
+
+@mixin regular
+    font:
+        family: HelveticaNeue, "Helvetica Neue", Helvetica, Arial, sans-serif
+
+@mixin italic
+    font:
+        family: Georgia, serif
+        style: italic
+
+h1
+    +bold
+    font-size: 24px
+    
+h2
+    +regular
+    font-size: 20px
+
+h4
+    +bold
+    font-size: 13px
+    line-height: $header_height
+
+p
+    +regular
+    font-size:  14px
