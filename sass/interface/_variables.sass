@@ -15,6 +15,12 @@ $hover: #ededed
 
 $light_line: #9c9e9f
 
+$gray1: #e2e7e8
+$gray2: #d5dcdd
+$gray3: #adb1b4
+$gray4: #515151
+$gray5: #222424
+
 $green: #b0e96c
 $yellow: #fffac7
 $blue: #0a85b2
@@ -27,3 +33,6 @@ $red: #dd4646
 
 @mixin gray_text_shadow
     +text-shadow(rgba(0,0,0,0.2), 0, -1px, 0px)
+
+@mixin antialiased
+    -webkit-font-smoothing: antialiased
