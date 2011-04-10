@@ -1,0 +1,36 @@
+@mixin icon($image: none)
+    @if $image == none
+        // icon font declaration
+    @else
+        width: image-width($image)
+        height: image-height($image)
+        background-image: image-url($image)
+
+@mixin extra_border($size, $type, $color, $top: 0, $right: 0, $bottom: 0, $left: 0, $radius: 0)
+    ::before
+        content: " "
+        position:  absolute
+        top: $top
+        right: $right
+        bottom: $bottom
+        left: $left
+        
+        +border-radius($radius)
+        border: $size $type $color
+
+@mixin white_text_shadow
+    +text-shadow(#fff, 0, 1px, 0px)
+
+@mixin gray_text_shadow
+    +text-shadow(rgba(0,0,0,0.2), 0, -1px, 0px)
+
+@mixin antialiased
+    -webkit-font-smoothing: antialiased
+
+@mixin single_line
+    overflow: hidden
+    text-overflow: ellipsis
+    white-space: nowrap
+
+@mixin multi_line
+    white-space: normal
