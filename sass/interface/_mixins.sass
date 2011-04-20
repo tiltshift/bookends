@@ -1,3 +1,16 @@
+@mixin webfont($name, $filename-base, $svg-name)
+    @font-face
+        /* This declaration targets Internet Explorer */
+        font-family: $name
+        src: url('../fonts/#{$filename-base}.eot')
+
+    @font-face
+        /* This declaration targets everything else */
+        font-family: $name
+        src: url(//:) format('no404'), url('../fonts/#{$filename-base}.woff') format('woff'), url('../fonts/#{$filename-base}.ttf') format('truetype'), url('../fonts/#{$filename-base}.svg##{$svg-name}') format('svg')
+        font-weight: normal
+        font-style: normal
+
 @mixin icon($image: none)
     @if $image == none
         // icon font declaration
