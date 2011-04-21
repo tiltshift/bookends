@@ -1,4 +1,4 @@
-@mixin webfont($name, $filename-base, $svg-name)
+=webfont($name, $filename-base, $svg-name)
     @font-face
         /* This declaration targets Internet Explorer */
         font-family: $name
@@ -11,7 +11,7 @@
         font-weight: normal
         font-style: normal
 
-@mixin icon($image: none)
+=icon($image: none)
     @if $image == none
         // icon font declaration
     @else
@@ -19,7 +19,21 @@
         height: image-height($image)
         background-image: image-url($image)
 
-@mixin extra_border($size, $type, $color, $top: 0, $right: 0, $bottom: 0, $left: 0, $radius: 0)
+=hide_text
+    text-indent: -5000px
+    white-space: nowrap
+    overflow: hidden
+    
+    a
+        outline: none
+
+=text_stroke($stroke-width, $stroke-color, $text-color: black, $fill-fallback: $text-color)
+    color: $text-color
+    -webkit-text-fill-color: $fill-fallback // Will override color (regardless of order)
+    -webkit-text-stroke-width: $stroke-width
+    -webkit-text-stroke-color: $stroke-color
+
+=extra_border($size, $type, $color, $top: 0, $right: 0, $bottom: 0, $left: 0, $radius: 0)
     ::before
         content: " "
         position:  absolute
@@ -31,20 +45,20 @@
         +border-radius($radius)
         border: $size $type $color
 
-@mixin white_text_shadow
+=white_text_shadow
     +text-shadow(#fff, 0, 1px, 0px)
 
-@mixin gray_text_shadow
+=gray_text_shadow
     +text-shadow(rgba(0,0,0,0.2), 0, -1px, 0px)
 
-@mixin antialiased
+=antialiased
     -webkit-font-smoothing: antialiased
 
-@mixin single_line
+=single_line
     display: block
     overflow: hidden
     text-overflow: ellipsis
     white-space: nowrap
 
-@mixin multi_line
+=multi_line
     white-space: normal
