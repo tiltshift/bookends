@@ -11,13 +11,18 @@
         font-weight: normal
         font-style: normal
 
+=image($image)
+    width: image-width($image)
+    height: image-height($image)
+    background:
+        image: image-url($image)
+        repeat: no-repeat
+
 =icon($image: none)
     @if $image == none
         // icon font declaration
     @else
-        width: image-width($image)
-        height: image-height($image)
-        background-image: image-url($image)
+        +image($image)
 
 =hide_text
     text-indent: -5000px
@@ -33,14 +38,16 @@
     -webkit-text-stroke-width: $stroke-width
     -webkit-text-stroke-color: $stroke-color
 
-=extra_border($size, $type, $color, $top: 0, $right: 0, $bottom: 0, $left: 0, $radius: 0)
-    ::before
+=extra_border($size, $type, $color, $radius: 0, $offset: 0)
+    position: relative
+    
+    &::before
         content: " "
         position:  absolute
-        top: $top
-        right: $right
-        bottom: $bottom
-        left: $left
+        top: $offset
+        right: $offset
+        bottom: $offset
+        left: $offset
         
         +border-radius($radius)
         border: $size $type $color

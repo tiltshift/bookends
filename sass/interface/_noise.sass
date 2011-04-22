@@ -1,6 +1,14 @@
+$noise_image: inline-image("images/interface/noise.png")
+
 .noise
-    background-image: inline-image("images/interface/noise.png")
+    background-image: $noise_image
     background-repeat: repeat
+
+=noise
+    @extend .noise
+
+=gradient_noise($color_stops)
+    +linear-gradient($color_stops, top, $noise_image)
 
 @media(-webkit-min-device-pixel-ratio: 2)
     .noise
