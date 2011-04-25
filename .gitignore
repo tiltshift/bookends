@@ -1,6 +1,9 @@
 .DS_store
 .svn
 .sass-cache
-css/
+css/*
+js/*
 images/*
+fonts/*
+sass/*
 sass/project
