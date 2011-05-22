@@ -4,7 +4,7 @@
 form
     position: relative
     
-    padding-bottom: $margin * 2
+    // padding-bottom: $margin * 2
     
     .form_wrap
         padding: $margin 0
@@ -45,14 +45,6 @@ input[type="password"],
 input[type="email"],
 input[type="number"],
 select
-    +light
-    
-    font-size: 17px
-    
-    +border-radius(3px)
-    border: 1px solid $light_line
-    +box-shadow(rgba(0,0,0,.2), 0px, 1px, 3px, inset)
-    
     margin: $margin 0
     width: 100%
     
@@ -60,6 +52,9 @@ select
         background-color: $yellow
     &.clearable
         padding-right: 28px
+
+input[type="submit"]
+    margin: auto
 
 .select_arrow
     position: absolute
@@ -72,34 +67,34 @@ select
         content: "6"
         color: $light_text
 
-.submit
-    a
-        margin: 0 $margin
-        
-        padding: 5px 6px
-        
-        color: black
-        
-        +border-radius(3px)
-        
-        +light
-        
-        border: 1px solid $light_line
-        +box-shadow($light_line, 0px, 1px, 0px)
-        
-        font-size: 17px
-        
-        display: block
-        
-        background:
-            image: inline-image("interface/arrow.png")
-            repeat: no-repeat
-            position: right center
-            color: $green
-
-@media(-webkit-min-device-pixel-ratio: 2)
-    .submit a
-        background-image: inline-image("interface/arrow_2x.png")
-        +background-size(23px 18px)
+// .submit
+//     a
+//         margin: 0 $margin
+//         
+//         padding: 5px 6px
+//         
+//         color: black
+//         
+//         +border-radius(3px)
+//         
+//         +light
+//         
+//         border: 1px solid $light_line
+//         +box-shadow($light_line, 0px, 1px, 0px)
+//         
+//         font-size: 17px
+//         
+//         display: block
+//         
+//         background:
+//             image: inline-image("interface/arrow.png")
+//             repeat: no-repeat
+//             position: right center
+//             color: $green
+// 
+// @media(-webkit-min-device-pixel-ratio: 2)
+//     .submit a
+//         background-image: inline-image("interface/arrow_2x.png")
+//         +background-size(23px 18px)
 
 @import errors
