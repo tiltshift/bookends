@@ -5,7 +5,7 @@ css_dir = "css"
 sass_dir = "sass"
 fonts_dir = "fonts"
 images_dir = "images"
-javascripts_dir = "js"
+javascripts_dir = "javascript"
 relative_assets = true
 output_style = :nested
 sass_options = {:debug_info => true}
