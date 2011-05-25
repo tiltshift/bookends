@@ -1,0 +1,1 @@
+This folder is for planning docs (designs, etc.)
