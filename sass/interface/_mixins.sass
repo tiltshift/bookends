@@ -41,7 +41,7 @@
 =extra_border($size, $type, $color, $radius: 0, $offset: 0)
     position: relative
     
-    &::before
+    &:before
         content: " "
         position:  absolute
         top: $offset
@@ -51,6 +51,21 @@
         
         +border-radius($radius)
         border: $size $type $color
+
+=item_shadow($offset_bottom: 0)
+    position: relative
+    
+    &:before
+        content: " "
+        position: absolute
+        top: 0
+        bottom: $offset_bottom
+        left: 0
+        right: 0
+        z-index: 5
+        
+        pointer-events: none
+        +shadow
 
 =white_text_shadow
     +text-shadow(#fff, 0, 1px, 0px)

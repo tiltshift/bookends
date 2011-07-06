@@ -17,6 +17,9 @@
     
     position: relative
     
+    background-color: white
+    border-bottom: 1px solid $light_stroke
+    
     .checkbox
         margin-left: -$margin
     
@@ -36,13 +39,12 @@
         
         height: $list_item / 2
         
-        margin-top: 10px
-        margin-right: 2px
+        margin-top: $list_item / 4
+        margin-right: ($list_item / 4) - $margin
         
-        footer &
-            margin-top: 12px
-        
-        background-color: $light_text
+        color: $dark_text
+        border: 1px solid $light_text
+        +box-shadow($light_text 0 1px 0 0 inset)
         
         padding: 0 10px
         
@@ -51,7 +53,10 @@
             size: 14px
         line-height: $list_item / 2
         
-        color: white
+        &.solid
+            +box-shadow(none)
+            background-color: $light_text
+            color: white
     
     &.selected
         background-color: $yellow
@@ -63,32 +68,24 @@
     
     padding: 0 $margin
 
-a.list_item, .list_item a.main_link
-    //+transition(all, 0.3s, ease-in-out)
-    
-    border-bottom: 1px solid $light_line
-    
-    footer &
-        border-bottom: none
-    
-    .mouse &:hover, .touch &.active
-        // padding-left: $margin + 2px
+a.list_item
+    .mouse &:hover
         background-color: $hover
     
-    .mouse footer &:hover, .touch footer &.active
-        background-color: transparent
-    
-    &.active, .mouse &:active
+    .mouse &:active, .touch &.active
+        color: white
         background-color: $blue
-    &.arrow
-        span.count
-            margin-right: 22px
-        background:
-            image: inline-image("images/interface/arrow.png")
-            repeat: no-repeat
-            position: right center
-
-@media(-webkit-min-device-pixel-ratio: 2)
-    a.list_item.arrow
+    
+    // if the whole list item is a link it should always have an arrow
+    background:
+        image: inline-image("images/interface/arrow.png")
+        repeat: no-repeat
+        position: right center
+    
+    @media (-webkit-min-device-pixel-ratio: 2)
         background-image: inline-image("images/interface/arrow_2x.png")
         +background-size(23px 18px)
+    
+    // Move the Count over to make room for the arrow
+    span.count
+        margin-right: 22px

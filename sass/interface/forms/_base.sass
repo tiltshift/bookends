@@ -44,13 +44,14 @@ input[type="text"],
 input[type="password"],
 input[type="email"],
 input[type="number"],
-select
+select,
+textarea
     margin: $margin 0
     width: 100%
     
     .show_error &
         background-color: $yellow
-    &.clearable
+    &.clearable, &[data-dg-form-clearable="1"]
         padding-right: 28px
 
 input[type="submit"]
@@ -59,13 +60,22 @@ input[type="submit"]
 .select_arrow
     position: absolute
     right: 10px
-    top: 13px
+    top: 12px
     
-    &::before
+    pointer-events: none
+    
+    .firefox &
+        display: none
+    
+    &:before
         +icon_font
         font-size: 29px
         content: "6"
         color: $light_text
+
+.submit
+    + .button
+        margin-right: $margin
 
 // .submit
 //     a
