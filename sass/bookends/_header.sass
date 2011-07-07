@@ -1,0 +1,69 @@
+$invisable_margin: 80px
+
+.header, header
+    +transition(all, 0.3s, ease-in-out)
+    
+    position: relative
+    z-index: 10
+    
+    height: $header_height
+    width: 100%
+    
+    .back.button
+        +float-left
+        margin: $margin
+        
+        &.hidden ~
+            h1, h2
+                margin-left: $invisable_margin
+    
+    .spacer
+        +float-right
+        height: $header_height
+        width: $invisable_margin
+    
+    h1, h2
+        +bold
+        +single_line
+        
+        display: block
+        
+        font-size: 16px
+        line-height: $header_height
+        text-align: center
+        
+        margin-bottom: 0px
+    
+    .nav_slide
+        +transition(all, 0.3s, ease-in-out)
+        
+        height: $header_height
+        
+        position: absolute
+        left: 0
+        right: 0
+        top: 0
+        
+        > .back
+            +float-left
+            display: block
+            
+            max-width: 90px
+            min-width: 60px
+            
+            margin: 6px
+        
+        .spacer
+            +float-right
+            
+            height: $header_height
+            
+            width: 82px
+    
+    .buttons
+        position: absolute
+        top: $margin
+        right: $margin
+
+#main_header
+    +box-shadow(rgba(255,212,153,0.42), 0px, -1px, 2px, inset)

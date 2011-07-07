@@ -1,0 +1,36 @@
+$chooser_height: $header_height - $margin * 2
+
+.chooser
+    +box-sizing(border-box)
+    +inline-block
+    
+    +border-radius(3px)
+    
+    border: 1px solid #707070
+    +box-shadow(rgba(255,255,255,0.3) 0 1px 0, rgba(0,0,0,0.3) 0 1px 2px 0 inset)
+    
+    height: $chooser_height
+    
+    a
+        +box-sizing(border-box)
+        display: block
+        float: left
+        padding: 6px 11px
+        height: $chooser_height
+        text-align: center
+        
+        color: #727272
+        +text_shadow(rgba(255,255,255,0.5), 0, 1px, 0)
+        
+        .mouse &:hover
+            color: #4b4b4b
+        
+        &.selected
+            color: #4b4b4b
+            cursor: default
+            +border-radius(3px)
+            border: 1px solid #6c6c6c
+            margin: -1px
+            //background-color: #c1c1c1
+            +background(linear-gradient(top, #dedede, #c1c1c1))
+            +box-shadow(rgba(255,255,255,0.8), 0, 1px, 0, false, inset)
