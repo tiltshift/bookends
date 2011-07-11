@@ -1,0 +1,17 @@
+.button.inset
+    &:before
+        position: absolute
+        top: 0
+        right: 0
+        bottom: 0
+        left: 0
+        content: " "
+        
+        +box-shadow(black 0 1px 2px 0 inset)
+    +box-shadow(rgba(255,255,255,.5) 0 1px 0)
+    
+    &.active, .mouse &:active
+        padding-top: $margin + 3px
+        padding-bottom: $margin + 1px
+        &:before
+            +box-shadow(black 0 2px 2px 0 inset)
