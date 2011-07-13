@@ -1,0 +1,1 @@
+A base collection of static files to be used with doppelganger or any cross platform project.
