@@ -13,6 +13,16 @@
     
     background-color: white
     
+    #open_buttons
+        display: block
+    #close_buttons
+        display: none
+    
     &.open
         +translate(0, 0)
         -webkit-transform: translate3d(0, 0, 0)
+        
+        #open_buttons
+            display: none
+        #close_buttons
+            display: block
