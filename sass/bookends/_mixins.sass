@@ -11,12 +11,17 @@
         font-weight: normal
         font-style: normal
 
-=image($image)
+=image($image, $image2x: none)
     width: image-width($image)
     height: image-height($image)
     background:
         image: image-url($image)
         repeat: no-repeat
+    
+    @if $image2x
+        @media (-webkit-min-device-pixel-ratio: 2)
+            background-image: image-url($image2x)
+            +background-size(image-width($image), image-height($image))
 
 =icon($image: none)
     @if $image == none
