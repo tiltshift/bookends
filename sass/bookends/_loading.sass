@@ -1,0 +1,35 @@
+@-webkit-keyframes load
+    from
+        -webkit-transform: rotate(0)
+    to
+        -webkit-transform: rotate(-360deg)
+
+#loading
+    position: absolute
+    top: $margin
+    left: $margin
+    z-index: 2000
+    
+    +transition(all, .1s, ease-in-out, .3s)
+    +translate(-130%, 0)
+    -webkit-transform: translate3d(-130%, 0, 0)
+    
+    +border-radius(3px)
+    background-color: white
+    +box-shadow(black, 0, 0, 10px)
+    padding: 3px
+    
+    #loader
+        +image('images/bookends/loading.png', 'images/bookends/loading_2x.png')
+
+body.loading
+    #loading
+        +translate(0, 0)
+        -webkit-transform: translate3d(0, 0, 0)
+        
+        #loader
+            -webkit-animation-name: load
+            -webkit-animation-duration: 1s
+            -webkit-animation-iteration-count: infinite
+            -webkit-animation-timing-function: linear
+            +image('images/bookends/loading.png', 'images/bookends/loading_2x.png')
