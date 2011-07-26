@@ -12,16 +12,12 @@ form
     
     .form_item
         position: relative
-    
-    .form_element
-        position: relative
-        overflow: hidden
-        margin: 0 $margin
         
         .close_x
+            +opacity(0)
             +transition()
             position: absolute
-            top: 11px
+            top: 12px
             right: 0px
             
             padding-right: 4px
@@ -32,6 +28,13 @@ form
             &.show
                 +translate(0, 0)
                 -webkit-transform: translate3d(0, 0, 0)
+        &.focus .close_x
+            +opacity(1)
+    
+    .form_element
+        position: relative
+        overflow: hidden
+        margin: 0 $margin
 
 label
     display: block
