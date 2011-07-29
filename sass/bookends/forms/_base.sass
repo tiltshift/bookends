@@ -14,7 +14,6 @@ form
         position: relative
         
         .close_x
-            +opacity(0)
             +transition()
             position: absolute
             top: 12px
@@ -25,11 +24,9 @@ form
             +translate(100%, 0)
             -webkit-transform: translate3d(100%, 0, 0)
             
-            &.show
-                +translate(0, 0)
-                -webkit-transform: translate3d(0, 0, 0)
-        &.focus .close_x
-            +opacity(1)
+        &.focus .close_x.show
+            +translate(0, 0)
+            -webkit-transform: translate3d(0, 0, 0)
     
     .form_element
         position: relative

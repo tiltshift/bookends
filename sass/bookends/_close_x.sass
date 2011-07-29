@@ -13,12 +13,12 @@
         content: "c"
         vertical-align: -1px
         
-        opacity: 0.5
+        +opacity(0.5)
     
     .mouse &:hover
         &:before
-            opacity: 0.8
+            +opacity(0.8)
     
     &.active, .mouse &:active
         &:before
-            opacity: 0.3
+            +opacity(0.3)
