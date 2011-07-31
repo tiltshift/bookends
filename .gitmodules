@@ -1,0 +1,3 @@
+[submodule "javascript/Noisy"]
+	path = javascript/Noisy
+	url = https://github.com/GCheung55/Noisy.git
