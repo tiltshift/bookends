@@ -19,6 +19,7 @@
     
     background-color: white
     border-bottom: 1px solid $light_stroke
+    border-top: 1px solid white
     
     .checkbox
         margin-left: -$margin
@@ -39,6 +40,7 @@
     span.count
         float: right
         +border-radius(20px)
+        background-color: white
         
         height: $list_item / 2
         
@@ -71,6 +73,8 @@
     padding: 0 $margin
 
 a.list_item
+    padding-right: 25px + $margin
+    
     .mouse &:hover
         background-color: $hover
     
@@ -87,7 +91,3 @@ a.list_item
     @media (-webkit-min-device-pixel-ratio: 2)
         background-image: inline-image("images/bookends/arrow_2x.png")
         +background-size(23px 18px)
-    
-    // Move the Count over to make room for the arrow
-    span.count
-        margin-right: 25px
