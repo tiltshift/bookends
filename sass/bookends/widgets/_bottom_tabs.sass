@@ -15,6 +15,15 @@
     +box-orient(horizontal)
     +box-align(stretch)
     
+    .tab_noise
+        position: absolute
+        top: 0
+        right: 0
+        bottom: 0
+        left: 0
+
+        pointer-events: none
+    
     .bump
         position: relative
         +box-flex(1)
@@ -62,7 +71,7 @@
         font-size: 10px
         +text-shadow(black 0 1px 1px)
         
-        padding-top: 28px
+        padding-top: $header_height - 19px
         
         margin: 3px
         
