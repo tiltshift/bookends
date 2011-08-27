@@ -4,38 +4,40 @@
 form
     +clearfix
     position: relative
-    
+
     // padding-bottom: $margin * 2
-    
+
     .form_wrap
         padding: $margin 0
-    
+
     .form_item
         position: relative
-        
+
         .close_x
-            +transition()
             position: absolute
             top: 12px
             right: 0px
-            
+
             padding-right: 4px
-            
+
             +translate(100%, 0)
             -webkit-transform: translate3d(100%, 0, 0)
-            
+
         &.focus .close_x.show
             +translate(0, 0)
             -webkit-transform: translate3d(0, 0, 0)
-    
+
     .form_element
         position: relative
         overflow: hidden
         margin: 0 $margin
 
+.mouse .close_x
+    +transition()
+
 label
     display: block
-    
+
     +bold
     font-size: 12px
     margin: 0 $margin
@@ -49,7 +51,7 @@ select,
 textarea
     margin: $margin 0
     width: 100%
-    
+
     .show_error &
         background-color: $yellow
     &.clearable, &[data-dg-form-clearable="1"]
@@ -62,12 +64,12 @@ input[type="submit"]
     position: absolute
     right: 10px
     top: 12px
-    
+
     pointer-events: none
-    
+
     .firefox &
         display: none
-    
+
     &:before
         +icon_font
         font-size: 29px
@@ -81,28 +83,28 @@ input[type="submit"]
 // .submit
 //     a
 //         margin: 0 $margin
-//         
+//
 //         padding: 5px 6px
-//         
+//
 //         color: black
-//         
+//
 //         +border-radius(3px)
-//         
+//
 //         +light
-//         
+//
 //         border: 1px solid $light_line
 //         +box-shadow($light_line 0px 1px 0px)
-//         
+//
 //         font-size: 17px
-//         
+//
 //         display: block
-//         
+//
 //         background:
 //             image: inline-image("images/bookends/arrow.png")
 //             repeat: no-repeat
 //             position: right center
 //             color: $green
-// 
+//
 // @media(-webkit-min-device-pixel-ratio: 2)
 //     .submit a
 //         background-image: inline-image("images/bookends/arrow_2x.png")
