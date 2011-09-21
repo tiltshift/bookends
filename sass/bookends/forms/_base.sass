@@ -32,6 +32,11 @@ form
         overflow: hidden
         margin: 0 $margin
 
+body.android .scroll input[type=password]
+    position: relative
+    top: -1000px
+    -webkit-transform: translate3d(0, 1000px, 0)
+
 .mouse .close_x
     +transition()
 
