@@ -7,8 +7,15 @@ form
         
         &.first
             border-top: 1px solid $gray4
+            +border-top-radius(3px)
         &.last
             margin-bottom: 5px
+            +border-bottom-radius(3px)
+        
+        &.show_error
+            background-color: lighten($red, 30%)
+            .error_mark
+                display: none
         
         border-left: 1px solid $gray4
         border-right: 1px solid $gray4
@@ -36,7 +43,7 @@ form
             padding: 0 10px
             margin: 0
             
-            background-color: #fff
+            background-color: transparent
             border: none
             
             +regular
