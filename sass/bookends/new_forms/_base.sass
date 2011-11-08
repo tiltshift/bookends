@@ -5,7 +5,7 @@ form
     
     .input_wrap
         display: block
-        height: 40px
+        min-height: 40px
         
         &.first
             border-top: 1px solid $gray4
@@ -38,6 +38,14 @@ form
             +regular
             font-size: 14px
             padding: $form_padding
+        
+        .note
+            +bold
+            font-size: 13px
+            color: $blue
+            padding: $form_padding
+            text-align: right
+        
         input
             -webkit-appearance: none
             outline: 0
