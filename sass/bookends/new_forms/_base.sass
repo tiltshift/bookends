@@ -8,9 +8,13 @@ form
         &.first
             border-top: 1px solid $gray4
             +border-top-radius(3px)
+            
         &.last
             margin-bottom: 5px
             +border-bottom-radius(3px)
+            
+            + .first
+                margin-top: 10px
         
         &.show_error
             background-color: lighten($red, 30%)
