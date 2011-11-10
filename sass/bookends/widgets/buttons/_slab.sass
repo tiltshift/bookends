@@ -1,0 +1,23 @@
+=slab_buttons
+    .button
+        +border-radius(2px)
+        +box-shadow($dark_stroke, 0px, 1px, 0px)
+        
+        border: 1px solid $dark_stroke
+        
+        +bold
+        color: $dark_text
+        background-color: white
+        
+        .mouse &:hover
+            background-color: $light_bg
+        
+        &:active, &.selected
+            position: relative
+            top: 1px
+            +box-shadow(none)
+        
+        &.selected
+            color: $blue
+            background-color: white !important
+            cursor: default

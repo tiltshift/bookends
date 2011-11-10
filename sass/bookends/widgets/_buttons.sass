@@ -1,0 +1,49 @@
+// Global button styles
+
+.button
+    +box-sizing(border-box)
+    +inline-block
+    
+    position: relative
+    
+    cursor: pointer
+    
+    // Normal Sizing
+    
+    height: $button
+    
+    padding: 8px 10px
+    margin: $button_margin
+    
+    .icon
+        padding-right: 10px
+    
+    +border-radius($default_border_radius - 2px)
+    
+    // Default Color
+    border: 1px solid $blue
+    +background(linear-gradient(top, $light_blue, darken($light_blue, 15%)))
+    color: white
+    +text-shadow($blue 0 -1px)
+    
+    // Default Font
+    +bold
+    font-size: 12px
+    +antialiased
+    
+    // Extend Touch and Click Area
+    &:before
+        $touch_margin: -$button_margin - 1px
+        
+        content: " "
+        display: block
+        position: absolute
+        top: $touch_margin
+        right: $touch_margin
+        bottom: $touch_margin
+        left: $touch_margin
+    
+// Unique Button Styles
+
+@import buttons/inset
+@import buttons/slab

@@ -1,0 +1,22 @@
+=inset_buttons
+    .button
+        // remove the default border
+        border: none
+        
+        &:after
+            content: " "
+            position: absolute
+            top: 0
+            right: 0
+            bottom: 0
+            left: 0
+            
+            +box-shadow(black 0 1px 1px 0 inset)
+        
+        +box-shadow(rgba(255,255,255,.6) 0 1px)
+        
+        &.active, .mouse &:active, .active &, a:active &
+            padding-top: $margin + 3px
+            padding-bottom: $margin + 1px
+            &:before
+                +box-shadow(black 0 2px 2px 0 inset)
