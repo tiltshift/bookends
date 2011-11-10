@@ -1,0 +1,20 @@
+&
+    +background(linear-gradient(top, #c3c3c3, #959595))
+    border-bottom: 1px solid $header_stroke
+    border-top: 1px solid white
+    
+    // custom back button for group pages.
+    .back
+        float: left
+        +image("images/bookends/arrow_back.png", "images/bookends/arrow_back_2x.png")
+        
+        background-position: center left
+        height: 100%
+        width: $invisable_margin
+    
+    h1, h2
+        color: $fixed_text
+        +text-shadow($arrow_shadow 0 1px 0)
+        font-size: 16px
+        text-align: center
+        line-height: $header_height

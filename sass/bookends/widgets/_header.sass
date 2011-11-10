@@ -1,0 +1,65 @@
+=header($style: gray, $has_shadow: true, $top_radius: $default-border-radius, $bottom_radius: 0)
+    $invisable_margin: 80px // how much space should be given on each side of the title?
+    
+    header, .header
+        +box-sizing(border-box)
+        position: relative
+        z-index: 10
+        overflow: hidden
+        
+        @if $style == gray
+            @import header/gray
+        
+        // Shadow
+        @if $has_shadow
+            &:before
+                display: block
+            
+                position: absolute
+                top: $header_height
+                left: -10px
+                right: -10px
+                bottom: -10px
+                
+                +inset_shadow
+                
+                z-index: 2000
+                pointer-events: none
+        
+        // Border Radius'
+        @if $top_radius != 0
+            +border-top-radius($top_radius)
+        
+        @if $bottom_radius != 0
+            +border-bottom-radius($bottom_radius)
+        
+        height: $header_height
+        width: 100%
+        
+        .back.button
+            float: left
+            margin: $margin
+            
+            // if we don't have a back button make sure the header is still centered
+            &.hidden ~ h1
+                margin-left: $invisable_margin
+        
+        // a spacer on the right that keeps things centered
+        .spacer
+            float: right
+            height: $header_height
+            width: $invisable_margin
+        
+        h1
+            display: block
+            
+            +bold
+            font-size: 16px
+            line-height: $header_height
+            
+            margin-bottom: 0px
+        
+        .buttons
+            position: absolute
+            top: $margin
+            right: $margin
