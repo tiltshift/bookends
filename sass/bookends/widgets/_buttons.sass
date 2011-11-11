@@ -43,6 +43,11 @@
         bottom: $touch_margin
         left: $touch_margin
     
+    .mouse &:hover
+        +background(linear-gradient(top, $light_blue, darken($light_blue, 5%)))
+    .mouse &:active, .active
+        +background(linear-gradient(bottom, $light_blue, darken($light_blue, 15%)))
+    
 // Unique Button Styles
 
 @import buttons/inset
