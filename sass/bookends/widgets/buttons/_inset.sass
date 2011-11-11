@@ -11,12 +11,15 @@
             bottom: 0
             left: 0
             
-            +box-shadow(black 0 1px 1px 0 inset)
+            +button_border_radius
+            +box-shadow(rgba(0,0,0,.8) 0 1px 1px 0 inset)
         
         +box-shadow(rgba(255,255,255,.6) 0 1px)
         
-        &.active, .mouse &:active, .active &, a:active &
-            padding-top: $margin + 3px
-            padding-bottom: $margin + 1px
-            &:before
-                +box-shadow(black 0 2px 2px 0 inset)
+        &.active, .mouse &:active
+            // inset buttons don't move down on press, but the words still should
+            top: 0
+            padding-top: $vertical_padding + 1px
+            
+            &:after
+                +box-shadow(rgba(0,0,0,1) 0 1px 2px 0 inset)
