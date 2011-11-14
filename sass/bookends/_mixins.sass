@@ -58,17 +58,17 @@
         +border-radius($radius)
         border: $size $type $color
 
-=item_shadow($offset_bottom: 0)
+=item_shadow
     position: relative
     
     &:before
         content: " "
         position: absolute
         top: 0
-        bottom: $offset_bottom
+        bottom: 0
         left: 0
         right: 0
-        z-index: 5
+        z-index: 20
         
         pointer-events: none
         +shadow
