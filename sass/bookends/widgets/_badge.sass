@@ -18,19 +18,20 @@
         
         +border-radius(20px)
         
-        height: 24px
+        height: 23px
         
         padding: 0 6px
         
         // Type
         +bold
         font-size: 13px
-        line-height: 20px
+        line-height: 19px
         
         // Default Style
         +text-shadow(none)
         
         color: white
-        background: $red
+        background-color: $red
+        +background-image(linear-gradient(lighten($red, 15%), $red 60%))
         border: 2px solid white
-        +shadow
+        +box-shadow(rgba(0,0,0,.4) 0 2px 3px 0)
