@@ -1,5 +1,6 @@
 =fixed_bar($style: gray, $has_shadow: true, $top_radius: $default-border-radius, $bottom_radius: 0)
     #fixed_bar
+        position: relative
         +box-sizing(border-box)
         
         @if $style == gray
@@ -9,8 +10,6 @@
             +item_shadow
         
         height: $header_height
-        
-        padding: $margin
         
         & + *
             top: $header_height
