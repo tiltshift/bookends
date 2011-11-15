@@ -27,6 +27,18 @@
             height: $button
             padding: 7px 10px
             
+            // Extend Touch and Click Area
+            &:before
+                $touch_margin: -$button_margin - 1px
+
+                content: " "
+                display: block
+                position: absolute
+                top: $touch_margin
+                right: $touch_margin
+                bottom: $touch_margin
+                left: $touch_margin
+            
             // text
             +bold
             font-size: 14px
