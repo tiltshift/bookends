@@ -27,25 +27,26 @@
 				biggerSide = 'right';
 			}
 			
-			// we'll use this to check the title size against the available space
-			var header_check = new Element('div', {'id': 'header_check'}).inject(element.getParent());
-			title.clone().inject(header_check);
-			
-			var titleWidth = header_check.getSize().x;
-			
-			if (titleWidth < centerSize) {
-				// if we're smaller than the center size, make sure that we center the text by
-				// making the smaller side the same size as the larger one.
-				if (biggerSide == 'right') {
-					left.setStyle('width', rightSize);
-				} else if (biggerSide == 'left') {
-					right.setStyle('width', leftSize);
+			if (title) {
+				// we'll use this to check the title size against the available space
+				var header_check = new Element('div', {'id': 'header_check'}).inject(element.getParent());
+				title.clone().inject(header_check);
+
+				var titleWidth = header_check.getSize().x;
+
+				if (titleWidth < centerSize) {
+					// if we're smaller than the center size, make sure that we center the text by
+					// making the smaller side the same size as the larger one.
+					if (biggerSide == 'right') {
+						left.setStyle('width', rightSize);
+					} else if (biggerSide == 'left') {
+						right.setStyle('width', leftSize);
+					}
+				} else if (titleWidth < availableSize) {
+					// otherwise, if we're smaller than the available size,
+					// left align the text so it dosn't look wonky
+					title.setStyle('text-align', 'left');
 				}
-			} else if (titleWidth < availableSize) {
-				// otherwise, if we're smaller than the available size,
-				// left align the text so it dosn't look wonky
-				title.setStyle('text-align', 'left');
-				
 			}
 		});
 	});
