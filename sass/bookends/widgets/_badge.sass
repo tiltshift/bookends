@@ -1,0 +1,36 @@
+//  Badge Syntax
+//      
+//  note:   the parent element should have position set to relative or absolute.
+//      
+//      <div class="some_parent">
+//          <div class="badge">
+//              12
+//          </div>
+//      </div>
+
+=badge($has_shadow: true)
+    .badge
+        +box-sizing(border-box)
+        position: absolute
+        right: -4px
+        top: -4px
+        z-index: 30
+        
+        +border-radius(20px)
+        
+        height: 24px
+        
+        padding: 0 6px
+        
+        // Type
+        +bold
+        font-size: 13px
+        line-height: 20px
+        
+        // Default Style
+        +text-shadow(none)
+        
+        color: white
+        background: $red
+        border: 2px solid white
+        +shadow
