@@ -24,6 +24,9 @@ $horizontal_padding: 10px
     .icon
         padding-right: $horizontal_padding
     
+    & + &
+        margin-left: 0
+    
     // Border
     border: 1px solid $blue
     border-bottom-color: darken($blue, 10%)
@@ -39,18 +42,29 @@ $horizontal_padding: 10px
     color: white
     +text-shadow($blue 0 -1px)
     
+    // Other Colors
+    &.neutral
+        // Border
+        border: 1px solid $gray4
+        border-bottom-color: darken($gray4, 10%)
+        
+        // Background
+        background:
+            color: $gray4
+            repeat: repeat-x
+            position: 0 0
+        +background-image(linear-gradient(top, $gray3, $gray4))
+
+        // Text
+        color: $gray5
+        +text-shadow(white 0 1px)
+    
     +bold
     font-size: 12px
+    line-height: 12px
     +antialiased
     
     text-align: center
-    
-    // Help Firefox not be a jerk about adding extra padding to buttons
-    button.btn,
-    input[type=submit].btn
-        &::-moz-focus-inner
-            padding: 0
-            border: 0
     
     // Extend Touch and Click Area
     &:before
@@ -68,7 +82,14 @@ $horizontal_padding: 10px
         background-position: 0 -10px
     .mouse &:active, .active
         top: 1px
-    
+
+// Help Firefox not be a jerk about adding extra padding to buttons
+button.button,
+input[type=submit].button
+    &::-moz-focus-inner
+        padding: 0
+        border: 0
+
 // Unique Button Styles
 
 @import buttons/inset
