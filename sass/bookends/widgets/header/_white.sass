@@ -1,15 +1,15 @@
-=header_gray($has_shadow: true, $top_radius: 0, $bottom_radius: 0)
+=header_white($has_shadow: true, $top_radius: 0, $bottom_radius: 0)
     &
         +base_header_styles($has_shadow, $top_radius, $bottom_radius)
         
         // Style
-        +background(linear-gradient(top, #c3c3c3, #959595))
+        background-color: white
         border-bottom: 1px solid $dark_line
-        +box-shadow(white 0 1px 0 0 inset)
-    
+        +box-shadow(none)
+        
         // Use inset buttons
-        +inset_buttons
-    
+        +slab_buttons
+        
         h1
             color: $fixed_text
             +text-shadow($arrow_shadow 0 1px 0)

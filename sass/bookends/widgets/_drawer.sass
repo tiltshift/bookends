@@ -1,58 +1,38 @@
-#drawer
-    +transition(all, 0.3s, ease-in-out, 0.15s)
-    
-    height: 0
-    
-    .webkit &
-        height: 100%
-        -webkit-transform: translate3d(0px, 100%, 0px)
-    
-    position: absolute
-    bottom: 0
-    right: 0
-    left: 0
-    display: block
-    z-index: 2000
-    
-    background-color: white
-    
-    &.open
-        height: 100%
+=drawer($style: white)
+    #drawer
+        +transition(all, 0.3s, ease-in-out, 0.15s)
         
-        .webkit &
-            -webkit-transform: translate3d(0, 0, 0)
-    
-    .wrap
         position: absolute
         bottom: 0
         right: 0
         left: 0
-        top: 0
+        display: block
+        z-index: 2000
         
-        header
-            background-color: $gray3
-            border-bottom: 1px $gray1 solid
-            
-            height: $header_height
-            
-            h2
-                +white_text_shadow
-                
-                color: $gray5
-                z-index: 1
-            
+        // Closed
+        height: 0
+        .webkit &
+            height: 100%
+            -webkit-transform: translate3d(0px, 100%, 0px)
         
-        #drawer_content
-            border-top: 1px $gray3 solid
+        &.open
+            height: 100%
+            .webkit &
+                -webkit-transform: translate3d(0, 0, 0)
+        
+        @if $style == white
+            @import drawer/white
+        
+        .wrap
             position: absolute
-            top: $header_height + 1px
-            left: 0
-            right: 0
             bottom: 0
+            right: 0
+            left: 0
+            top: 0
             
             #drawer_content
-                position: relative
-                
-                > div
-                    //+slide_left_right
-                    padding: 0 $margin
+                position: absolute
+                top: $header_height
+                left: 0
+                right: 0
+                bottom: 0

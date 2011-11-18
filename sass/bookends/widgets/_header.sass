@@ -8,8 +8,18 @@
 //          <h1>Header Title</h1>
 //          <div class="right"></div>
 //      </header>
+//
+// Base Styles
 
-=header($style: gray, $has_shadow: true, $top_radius: $default-border-radius, $bottom_radius: 0)
+@import header/base
+
+//  Header Styles
+
+@import header/gray
+@import header/white
+
+
+=header
     // Elements for checking the title size, this will be placed behind the header.
     // This makes sure the header is always centered properly
     
@@ -20,7 +30,7 @@
         
         padding: 0 $margin
     
-    #header_check
+    .header_check
         +box-sizing(border-box)
         position: absolute
         top: 0
@@ -32,7 +42,7 @@
     
     // Actual Header Styles
     
-    header, .header
+    header
         +display-box
         +box-orient(horizontal)
         +box-align(stretch)
@@ -42,20 +52,6 @@
         
         position: relative
         z-index: 10
-        
-        @if $style == gray
-            @import header/gray
-        
-        // Shadow
-        @if $has_shadow
-            +item_shadow
-        
-        // Border Radius'
-        @if $top_radius != 0
-            +border-top-radius($top_radius)
-        
-        @if $bottom_radius != 0
-            +border-bottom-radius($bottom_radius)
         
         height: $header_height
         width: 100%

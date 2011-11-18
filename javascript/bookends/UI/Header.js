@@ -1,15 +1,19 @@
 (function(){
-	Matcher.register('header, .header', function(elements){
+	Matcher.register('header', function(elements){
 		elements.each(function(element){
 			var left = element.getElement('.left');
 			var right = element.getElement('.right');
 			var title = element.getElement('h1');
+			var header_check = element.getParent().getChildren('.header_check')[0];
 			
 			if (!left) {
 				left = new Element('div', {'class': 'left'}).inject(element);
 			}
 			if (!right) {
 				right = new Element('div', {'class': 'right'}).inject(element);
+			}
+			if (!header_check) {
+				header_check = new Element('div', {'class': 'header_check'}).inject(element.getParent());
 			}
 			
 			var fullSize = element.getSize().x;
@@ -19,7 +23,7 @@
 			var availableSize = fullSize - leftSize - rightSize;
 			var biggerSide = null;
 			
-			if (leftSize > rightSize) {
+			if (leftSize >= rightSize) {
 				centerSize = fullSize - leftSize * 2;
 				biggerSide = 'left';
 			} else if (rightSize > leftSize) {
@@ -29,8 +33,7 @@
 			
 			if (title) {
 				// we'll use this to check the title size against the available space
-				var header_check = new Element('div', {'id': 'header_check'}).inject(element.getParent());
-				title.clone().inject(header_check);
+				title.clone().inject(header_check.empty());
 
 				var titleWidth = header_check.getSize().x;
 

@@ -28,14 +28,13 @@ $horizontal_padding: 10px
         margin-left: 0
     
     // Border
-    border: 1px solid $blue
-    border-bottom-color: darken($blue, 10%)
+    border: 1px solid rgba(0,0,0,0.3)
     
     // Background
     background:
         color: $darker_blue
         repeat: repeat-x
-        position: 0 0
+        position: 0 -1px
     +background-image(linear-gradient(top, $light_blue, $darker_blue))
     
     // Text
@@ -92,5 +91,8 @@ input[type=submit].button
 
 // Unique Button Styles
 
+@import buttons/reset
+
 @import buttons/inset
 @import buttons/slab
+@import buttons/flat
