@@ -3,6 +3,9 @@
         // remove the default border
         border: none
         
+        // Adjust the margin
+        padding-top: $vertical_padding + 1px
+        
         &:after
             content: " "
             position: absolute
@@ -19,7 +22,7 @@
         &.active, .mouse &:active
             // inset buttons don't move down on press, but the words still should
             top: 0
-            padding-top: $vertical_padding + 1px
+            padding-top: $vertical_padding + 2px
             
             &:after
                 +box-shadow(rgba(0,0,0,1) 0 1px 2px 0 inset)
