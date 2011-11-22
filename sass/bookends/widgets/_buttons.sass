@@ -22,6 +22,7 @@ $horizontal_padding: 10px
     margin: $button_margin
     
     .icon
+        float: left
         padding-right: $horizontal_padding
     
     & + &
@@ -53,6 +54,16 @@ $horizontal_padding: 10px
         // Text
         color: $gray5
         +text-shadow(white 0 1px)
+    
+    // Special Buttons
+    &.back
+        .icon
+            +icon_font
+            
+            margin-top: -1px
+            
+            &:before
+                content: "<"
     
     +bold
     font-size: 12px
