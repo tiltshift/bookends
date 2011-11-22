@@ -15,10 +15,29 @@
         
         +opacity(0.5)
     
-    .mouse &:hover
-        &:before
+    .mouse &
+        +transition()
+        
+        &:hover:before
             +opacity(0.8)
     
     &.active, .mouse &:active
         &:before
             +opacity(0.3)
+
+form .input_wrap
+    .close_x
+        position: absolute
+        top: 50%
+        right: 0px
+        z-index: 10
+        
+        margin-top: -13px
+        padding-right: $margin
+        
+        +translate(100%, 0)
+        -webkit-transform: translate3d(100%, 0, 0)
+    
+    &.focus .close_x.show
+        +translate(0, 0)
+        -webkit-transform: translate3d(0, 0, 0)
