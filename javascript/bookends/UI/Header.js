@@ -55,7 +55,9 @@
 	});
 	Matcher.register('.back.button', function(elements){
 		elements.each(function(element){
-			new Element('div', {'class': 'icon'}).inject(element, 'top');
+			if (!element.getElement('.icon')) {
+				new Element('div', {'class': 'icon'}).inject(element, 'top');
+			}
 		});
 	});
 })();
