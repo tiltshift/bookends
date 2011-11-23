@@ -80,6 +80,31 @@
             .line2
                 +single_line
                 color: $light_text
+        
+        .count
+            float: right
+            +border-radius(20px)
+            background-color: white
+            
+            height: $list_item / 2
+            
+            margin-top: $list_item / 4 - 1px
+            margin-right: ($list_item / 4) - $margin
+            
+            color: $dark_text
+            border: 1px solid $light_stroke
+            +box-shadow($light_stroke 0 1px 0 0 inset)
+            
+            padding: 0 10px
+            
+            +bold
+            font-size: 14px
+            line-height: $list_item / 2
+            
+            &.solid
+                +box-shadow(none)
+                background-color: $light_text
+                color: white
     
     a.list_item
         padding-right: 25px + $margin
