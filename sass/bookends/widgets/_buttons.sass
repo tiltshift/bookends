@@ -1,8 +1,8 @@
 // Global button styles
 
-$darker_blue: darken($light_blue, 15%)
-$vertical_padding: 8px
-$horizontal_padding: 10px
+$dark_blue: darken($light_blue, 15%) !default
+$vertical_padding: 8px !default
+$horizontal_padding: 10px !default
 
 .button
     +box-sizing(border-box)
@@ -33,10 +33,10 @@ $horizontal_padding: 10px
     
     // Background
     background:
-        color: $darker_blue
+        color: $dark_blue
         repeat: repeat-x
         position: 0 -1px
-    +background-image(linear-gradient(top, $light_blue, $darker_blue))
+    +background-image(linear-gradient(top, $light_blue, $dark_blue))
     
     // Text
     color: white
