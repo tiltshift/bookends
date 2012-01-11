@@ -1,5 +1,12 @@
 // Typography
 
+html
+    font-size: $base_font
+
+body
+    font-size: 1rem
+    line-height: $base_leading
+
 h1
     +bold
     font-size: 24px
@@ -15,7 +22,12 @@ h4
 
 p
     +regular
-    font-size:  14px
+    font-size:  $base_font
+    line-height: $base_leading
+    
+    margin-top: 0
+    margin-bottom: $base_leading
+    
 
 .ord
     font-size: .7em
