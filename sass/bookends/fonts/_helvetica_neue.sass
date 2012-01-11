@@ -1,0 +1,28 @@
+@mixin bold
+    font:
+        family: HelveticaNeue-Bold, "Helvetica Neue Bold", "Helvetica Neue", Helvetica, Arial, sans-serif
+        weight: 600
+
+@mixin regular
+    font:
+        family: HelveticaNeue, "Helvetica Neue", Helvetica, Arial, sans-serif
+        weight: 400
+
+@mixin light
+    +antialiased
+    
+    font:
+        family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif
+        weight: 300
+
+@mixin ultralight
+    font:
+        family: "HelveticaNeue-UltraLight", "Helvetica Neue UltraLight", "Helvetica Neue", Helvetica, Arial, sans-serif
+        weight: 100
+    
+    letter-spacing: 1px
+
+@mixin italic
+    font:
+        family: Georgia, serif
+        style: italic
