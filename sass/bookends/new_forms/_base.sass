@@ -74,23 +74,3 @@ form
             border: 1px solid $gray4
             height: 30px
             margin-top: $form_padding
-        
-    input[type="submit"]
-        -webkit-appearance: none
-        +border-radius(3px)
-        +linear-gradient(color-stops($green, darken($green, 20%)), top)
-        border: 1px solid $gray4
-        cursor: pointer
-        
-        color: $gray5
-        font-size: 14px
-        +text-shadow(#fff, 0, 1px, 1px)
-        
-        outline: 0
-        padding: 5px 10px 6px
-        width: 100%
-        
-        margin: 0
-        
-        &:active
-            +linear-gradient(color-stops($green, darken($green, 20%)), bottom)
