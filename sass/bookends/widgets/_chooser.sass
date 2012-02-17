@@ -5,6 +5,9 @@
 //          <a herf="#">Text of Icon</a>
 //      </div>
 
+// Themes
+@import chooser/gray
+
 =chooser($style: gray)
     .chooser
         +inline-block
@@ -13,7 +16,7 @@
         position: relative
         
         @if $style == gray
-            @import chooser/gray
+            +gray
         
         height: $button
         margin: $button-margin

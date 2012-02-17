@@ -18,17 +18,16 @@
 @import header/gray
 @import header/white
 
+=header_typography
+    +bold
+    font-size: 16px
+    line-height: $header_height
+    
+    padding: 0 $margin
 
 =header
     // Elements for checking the title size, this will be placed behind the header.
     // This makes sure the header is always centered properly
-    
-    =header_typography
-        +bold
-        font-size: 16px
-        line-height: $header_height
-        
-        padding: 0 $margin
     
     .header_check
         +box-sizing(border-box)

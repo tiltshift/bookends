@@ -1,10 +1,13 @@
+// import themes
+@import fixed_bar/gray
+
 =fixed_bar($style: gray, $has_shadow: true, $top_radius: $default-border-radius, $bottom_radius: 0)
     #fixed_bar
         position: relative
         +box-sizing(border-box)
         
         @if $style == gray
-            @import fixed_bar/gray
+            +gray
         
         @if $has_shadow
             +item_shadow

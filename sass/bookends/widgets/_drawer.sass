@@ -1,3 +1,6 @@
+// Themes
+@import drawer/white
+
 =drawer($style: white)
     #drawer
         +transition(all, 0.3s, ease-in-out, 0.15s)
@@ -21,7 +24,7 @@
                 -webkit-transform: translate3d(0, 0, 0)
         
         @if $style == white
-            @import drawer/white
+            +white
         
         .wrap
             position: absolute
