@@ -1,31 +1,29 @@
-// import themes
-@import fixed_bar/gray
 
-=fixed_bar($style: gray, $has_shadow: true, $top_radius: $default-border-radius, $bottom_radius: 0)
-    #fixed_bar
-        position: relative
-        +box-sizing(border-box)
+=base_fixed_bar_styles($has_shadow: true, $top_radius: $default-border-radius, $bottom_radius: 0)
+    position: relative
+    +box-sizing(border-box)
+    
+    @if $has_shadow
+        +item_shadow
+    
+    height: $header_height
+    
+    & + *
+        top: $header_height
+    
+    // we assume a form within a fixed bar should have special styles.
+    form
+        padding: 0
         
-        @if $style == gray
-            +gray
-        
-        @if $has_shadow
-            +item_shadow
-        
-        height: $header_height
-        
-        & + *
-            top: $header_height
-        
-        // we assume a form within a fixed bar should have special styles.
-        form
-            padding: 0
+        .input_wrap
+            border: none
             
-            .input_wrap
-                border: none
-                
-                label
-                    display: none
-                input
-                    width: 100%
-                    height: 32px
+            label
+                display: none
+            input
+                width: 100%
+                height: 32px
+
+// import themes
+
+@import fixed_bar/gray
