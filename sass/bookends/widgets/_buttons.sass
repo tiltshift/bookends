@@ -19,14 +19,13 @@ $horizontal_padding: 10px !default
     height: $button
     
     padding: $vertical_padding $horizontal_padding
-    margin: $button_margin
     
     .icon
         float: left
         padding-right: $horizontal_padding
     
     & + &
-        margin-left: 0
+        margin-left: $button_margin
     
     // Border
     border: 1px solid rgba(0,0,0,0.3)
@@ -50,10 +49,22 @@ $horizontal_padding: 10px !default
             repeat: repeat-x
             position: 0 0
         +background-image(linear-gradient(top, $gray3, $gray4))
-
+        
         // Text
         color: $gray5
         +text-shadow(white 0 1px)
+    
+    &.negative
+        // Background
+        background:
+            color: $red
+            repeat: repeat-x
+            position: 0 0
+        +background-image(linear-gradient(top, $red, $red))
+
+        // Text
+        color: white
+        +text-shadow(black 0 1px)
     
     // Special Buttons
     &.back
@@ -103,3 +114,4 @@ input[type=submit].button
 @import buttons/inset
 @import buttons/slab
 @import buttons/flat
+@import buttons/floating

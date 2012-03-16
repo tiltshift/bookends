@@ -1,0 +1,26 @@
+=floating_buttons
+    .button
+        +border-radius(2px)
+        +text-shadow(rgba(0,0,0,0.6) 0 -1px 0)
+        +box-shadow(rgba(0,0,0,0.6) 0 1px 3px)
+        
+        background:
+            image: none
+            color: $light_blue
+        
+        border: 1px solid rgba(255,255,255,0.1)
+        
+        &.negative
+            background:
+                image: none
+                color: $red
+        
+        .mouse &:hover
+            background-color: lighten($light_blue, 5%)
+            
+            &.negative
+                background-color: lighten($red, 5%)
+        
+        &:active, &.selected
+            position: relative
+            top: 1px
