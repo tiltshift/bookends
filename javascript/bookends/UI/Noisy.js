@@ -50,7 +50,15 @@ this.Noisy = new Class({
 		}
 
 		this.setCachedUri(options, uri);
-		this.element.setStyle('background-image', 'url(' + uri + ')');
+		
+		// get the existing value for background-image
+		var existingBackground = this.element.getStyle('background-image');
+		
+		if (existingBackground) {
+			existingBackground = ", " + existingBackground;
+		}
+		
+		this.element.setStyle('background-image', 'url(' + uri + ')' + existingBackground);
 
 		return this;
 	},
