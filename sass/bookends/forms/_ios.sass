@@ -1,0 +1,17 @@
+=ios_form_style
+    form
+        .input_wrap
+            border-left: 1px solid $gray4
+            border-right: 1px solid $gray4
+            border-bottom: 1px solid $gray4
+            
+            &.first
+                border-top: 1px solid $gray4
+                +border-top-radius(3px)
+            
+            &.last
+                margin-bottom: $form_padding
+                +border-bottom-radius(3px)
+                
+                + .first
+                    margin-top: $form_padding * 2
