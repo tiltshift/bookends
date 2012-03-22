@@ -42,6 +42,7 @@ input[type="button"]
         padding: 0
 
 +inputs
+    position: relative
     +box-sizing(border-box)
     +background-clip(padding-box)
     +border-radius($input_radius)
@@ -56,14 +57,14 @@ input[type="button"]
     width: $input_width
     height: $input_height
     
-    padding: $input_padding - 1px $input_padding
+    padding: $input_v_padding $input_h_padding
     
     font-size: $font_size
     
     vertical-align: top
     // IE7
-    *padding-top: $input_padding - 1px
-    *padding-bottom: $input_padding - 2px
+    *padding-top: $input_v_padding
+    *padding-bottom: $input_v_padding - 1px
     *height: auto
 
 button[disabled],
@@ -117,7 +118,27 @@ select[size="1"]
     select,
     select[size="0"],
     select[size="1"]
-        // IMAGE HERE
+        padding-right: image-width("images/bookends/select.png") + 20px
+        &:after
+            position: absolute
+            top: 15px
+            right: 10px
+            content: " "
+            z-index: 3
+            
+            width: image-width("images/bookends/select.png")
+            height: (image-height("images/bookends/select.png") - 2px)/2
+            
+            background:
+                image: image-url("images/bookends/select.png")
+                position: bottom
+            
+            @media (-webkit-min-device-pixel-ratio: 2)
+                background:
+                    image: image-url("images/bookends/select_2x.png")
+                +background-size(image-width("images/bookends/select.png"), image-height("images/bookends/select.png"))
+        &:hover:after
+            background-position: top
 
 textarea
     min-height: $input_height
