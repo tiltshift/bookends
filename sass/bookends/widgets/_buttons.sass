@@ -4,109 +4,6 @@ $dark_blue: darken($light_blue, 15%) !default
 $vertical_padding: 8px !default
 $horizontal_padding: 10px !default
 
-.button
-    +box-sizing(border-box)
-    +inline-block
-    +border-radius($interior_border_radius)
-    +transition(background-position, 0.1s, ease-in-out)
-    
-    position: relative
-    
-    cursor: pointer
-    
-    // Normal Sizing
-    
-    height: $button
-    
-    padding: $vertical_padding $horizontal_padding
-    
-    .icon
-        float: left
-        padding-right: $horizontal_padding
-    
-    & + &
-        margin-left: $button_margin
-    
-    // Border
-    border: 1px solid rgba(0,0,0,0.3)
-    
-    // Background
-    background:
-        color: $dark_blue
-        repeat: repeat-x
-        position: 0 -1px
-    +background-image(linear-gradient(top, $light_blue, $dark_blue))
-    
-    // Text
-    color: white
-    +text-shadow($blue 0 -1px)
-    
-    // Other Colors
-    &.neutral
-        // Background
-        background:
-            color: $gray4
-            repeat: repeat-x
-            position: 0 0
-        +background-image(linear-gradient(top, $gray3, $gray4))
-        
-        // Text
-        color: $gray5
-        +text-shadow(white 0 1px)
-    
-    &.negative
-        // Background
-        background:
-            color: $red
-            repeat: repeat-x
-            position: 0 0
-        +background-image(linear-gradient(top, $red, $red))
-
-        // Text
-        color: white
-        +text-shadow(black 0 1px)
-    
-    // Special Buttons
-    &.back
-        .icon
-            +icon_font
-            
-            margin-top: -1px
-            
-            &:before
-                content: "<"
-    
-    +bold
-    font-size: 12px
-    line-height: 12px
-    +antialiased
-    
-    text-align: center
-    
-    // Extend Touch and Click Area
-    &:before
-        $touch_margin: -$button_margin - 1px
-        
-        content: " "
-        display: block
-        position: absolute
-        top: $touch_margin
-        right: $touch_margin
-        bottom: $touch_margin
-        left: $touch_margin
-    
-    .mouse &:hover
-        background-position: 0 -10px
-    .mouse &:active, .active
-        top: 1px
-
-// Help Firefox not be a jerk about adding extra padding to buttons
-button.button,
-input[type=submit].button
-    &::-moz-focus-inner
-        padding: 0
-        border: 0
-
 // Unique Button Styles
 
 @import buttons/reset
@@ -115,3 +12,107 @@ input[type=submit].button
 @import buttons/slab
 @import buttons/flat
 @import buttons/floating
+
+=buttons
+    .button
+        +box-sizing(border-box)
+        +inline-block
+        +border-radius($interior_border_radius)
+        +transition(background-position, 0.1s, ease-in-out)
+        
+        position: relative
+        
+        cursor: pointer
+        
+        // Normal Sizing
+        
+        height: $button
+        
+        padding: $vertical_padding $horizontal_padding
+        
+        .icon
+            float: left
+            padding-right: $horizontal_padding
+        
+        & + &
+            margin-left: $button_margin
+        
+        // Border
+        border: 1px solid rgba(0,0,0,0.3)
+        
+        // Background
+        background:
+            color: $dark_blue
+            repeat: repeat-x
+            position: 0 -1px
+        +background-image(linear-gradient(top, $light_blue, $dark_blue))
+        
+        // Text
+        color: white
+        +text-shadow($blue 0 -1px)
+        
+        // Other Colors
+        &.neutral
+            // Background
+            background:
+                color: $gray4
+                repeat: repeat-x
+                position: 0 0
+            +background-image(linear-gradient(top, $gray3, $gray4))
+            
+            // Text
+            color: $gray5
+            +text-shadow(white 0 1px)
+        
+        &.negative
+            // Background
+            background:
+                color: $red
+                repeat: repeat-x
+                position: 0 0
+            +background-image(linear-gradient(top, $red, $red))
+            
+            // Text
+            color: white
+            +text-shadow(black 0 1px)
+        
+        // Special Buttons
+        &.back
+            .icon
+                +icon_font
+                
+                margin-top: -1px
+                
+                &:before
+                    content: "<"
+        
+        +bold
+        font-size: 12px
+        line-height: 12px
+        +antialiased
+        
+        text-align: center
+        
+        // Extend Touch and Click Area
+        &:before
+            $touch_margin: -$button_margin - 1px
+            
+            content: " "
+            display: block
+            position: absolute
+            top: $touch_margin
+            right: $touch_margin
+            bottom: $touch_margin
+            left: $touch_margin
+        
+        .mouse &:hover
+            background-position: 0 -10px
+        .mouse &:active, .active
+            top: 1px
+    
+    // Help Firefox not be a jerk about adding extra padding to buttons
+    button.button,
+    input[type=submit].button
+        &::-moz-focus-inner
+            padding: 0
+            border: 0
