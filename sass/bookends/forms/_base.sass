@@ -5,3 +5,13 @@ $form_padding: 5px
         @import reset
         
         padding: $form_padding
+        
+        label
+            width: $label_width
+            line-height: $input_height
+            
+            @if $label_position == left
+                +inline_block
+            @if $label_position == top
+                display: block
+                
