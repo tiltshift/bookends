@@ -41,38 +41,29 @@ input[type="button"]
         border: 0
         padding: 0
 
-textarea,
-select,
-input[type="date"],
-input[type="datetime"],
-input[type="datetime-local"],
-input[type="email"],
-input[type="month"],
-input[type="number"],
-input[type="password"],
-input[type="search"],
-input[type="tel"],
-input[type="text"],
-input[type="time"],
-input[type="url"],
-input[type="week"]
++inputs
     +box-sizing(border-box)
     +background-clip(padding-box)
-    +border-radius(0)
+    +border-radius($input_radius)
     -webkit-appearance: none
     outline: 0
     margin: 0
     
     border: $border
+    color: $color
     background-color: $background
     
     width: $input_width
     height: $input_height
     
+    padding: $input_padding - 1px $input_padding
+    
+    font-size: $font_size
+    
     vertical-align: top
     // IE7
-    *padding-top: 2px
-    *padding-bottom: 1px
+    *padding-top: $input_padding - 1px
+    *padding-bottom: $input_padding - 2px
     *height: auto
 
 button[disabled],

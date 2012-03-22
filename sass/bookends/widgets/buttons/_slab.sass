@@ -1,10 +1,9 @@
 =slab_buttons
-    .button
+    .button, input[type="submit"]
         +border-radius(2px)
         
+        border: 1px solid $blue
         border-bottom-width: 2px
-        
-        padding-top: $vertical_padding - 1px
         
         background:
             image: none
@@ -13,8 +12,7 @@
         .mouse &:hover
             background-color: lighten($light_blue, 5%)
         
-        &:active, &.selected
-            position: relative
+        .mouse &:active, &.selected
             top: 1px
             border-bottom-width: 1px
         
