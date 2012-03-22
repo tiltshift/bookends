@@ -26,6 +26,16 @@ $horizontal_padding: 10px !default
         
         // Normal Sizing
         
+        +bold
+        font-size: 12px
+        line-height: 12px
+        +antialiased
+        
+        text-align: center
+        
+        color: white
+        +text-shadow($blue 0 -1px)
+        
         height: $button
         
         padding: $vertical_padding $horizontal_padding
@@ -46,10 +56,6 @@ $horizontal_padding: 10px !default
             repeat: repeat-x
             position: 0 -1px
         +background-image(linear-gradient(top, $light_blue, $dark_blue))
-        
-        // Text
-        color: white
-        +text-shadow($blue 0 -1px)
         
         // Other Colors
         &.neutral
@@ -85,13 +91,6 @@ $horizontal_padding: 10px !default
                 
                 &:before
                     content: "<"
-        
-        +bold
-        font-size: 12px
-        line-height: 12px
-        +antialiased
-        
-        text-align: center
         
         // Extend Touch and Click Area
         &:before
