@@ -15,6 +15,28 @@ $horizontal_padding: 10px !default
 
 =buttons
     .button, input[type="submit"]
+        // Default Local Variables
+        $background_dark: $dark_blue
+        $background_light: $light_blue
+        $text_color: white
+        $text_shadow: $blue
+        $top_offset: -1px
+        
+        // Other Colors
+        &.neutral
+            $background_dark: $gray4
+            $background_light: $gray3
+            $text_color: $gray5
+            $text_shadow: white
+            $top_offset: 0
+        
+        &.negative
+            $background_dark: $dark_red
+            $background_light: $red
+            $text_color: white
+            $text_shadow: black
+            $top_offset: 0
+        
         +box-sizing(border-box)
         +inline-block
         +border-radius($interior_border_radius)
@@ -34,7 +56,7 @@ $horizontal_padding: 10px !default
         text-align: center
         
         color: white
-        +text-shadow($blue 0 -1px)
+        +text-shadow($text_shadow 0 -1px)
         
         height: $button
         
@@ -52,35 +74,10 @@ $horizontal_padding: 10px !default
         
         // Background
         background:
-            color: $dark_blue
+            color: $background_dark
             repeat: repeat-x
-            position: 0 -1px
-        +background-image(linear-gradient(top, $light_blue, $dark_blue))
-        
-        // Other Colors
-        &.neutral
-            // Background
-            background:
-                color: $gray4
-                repeat: repeat-x
-                position: 0 0
-            +background-image(linear-gradient(top, $gray3, $gray4))
-            
-            // Text
-            color: $gray5
-            +text-shadow(white 0 1px)
-        
-        &.negative
-            // Background
-            background:
-                color: $red
-                repeat: repeat-x
-                position: 0 0
-            +background-image(linear-gradient(top, $red, $red))
-            
-            // Text
-            color: white
-            +text-shadow(black 0 1px)
+            position: 0 $top_offset
+        +background-image(linear-gradient(top, $background_light, $background_dark))
         
         // Special Buttons
         &.back
