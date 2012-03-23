@@ -1,6 +1,6 @@
-=fixed_bar_gray($has_shadow: true, $top_radius: $default-border-radius, $bottom_radius: 0)
+=fixed_bar_gray($height: $header_height, $has_shadow: true, $top_radius: $default-border-radius, $bottom_radius: 0)
     #fixed_bar
-        +base_fixed_bar_styles($has_shadow, $top_radius, $bottom_radius)
+        +base_fixed_bar_styles($height, $has_shadow, $top_radius, $bottom_radius)
         
         // Style
         background-color: #c3c3c3
@@ -15,7 +15,7 @@
             +text-shadow($arrow_shadow 0 1px 0)
             font-size: 16px
             text-align: center
-            line-height: $header_height
+            line-height: $height
         
         form input
             +border-radius($interior_border_radius)

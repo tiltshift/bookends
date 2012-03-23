@@ -11,12 +11,13 @@
         font-weight: normal
         font-style: normal
 
-=image($image, $image2x: none)
-    display: inline-block
-    width: image-width($image)
-    padding-top: image-height($image)
-    overflow: hidden
-    height: 0
+=image($image, $image2x: none, $size: true)
+    @if $size
+        display: inline-block
+        width: image-width($image)
+        padding-top: image-height($image)
+        overflow: hidden
+        height: 0
     background:
         image: image-url($image)
         repeat: no-repeat
