@@ -1,28 +1,30 @@
+=slab_colors($background_color: $light_blue, $border_color: $blue)
+    border: 1px solid $border_color
+    border-bottom-width: 2px
+    
+    background:
+        image: none !important
+        color: $background_color
+    
+    &.selected
+        color: $border_color
+    
+    .mouse &:hover
+        background-color: lighten($background_color, 5%)
+
 =slab_buttons
     .button, input[type="submit"]
-        $background_color: $light_blue
-        $border_color: $blue
+        +slab_colors
         
         &.negative
-            $background_color: $red
-            $border_color: $dark_red
-        
-        border: 1px solid $border_color
-        background:
-            image: none !important
-            color: $background_color
+            +slab_colors($red, $dark_red)
         
         +border-radius(2px)
-        border-bottom-width: 2px
         
         .mouse &:active, &.selected
             top: 1px
             border-bottom-width: 1px
         
         &.selected
-            color: $border_color
             background-color: white !important
             cursor: default
-        
-        .mouse &:hover
-            background-color: lighten($background_color, 5%)

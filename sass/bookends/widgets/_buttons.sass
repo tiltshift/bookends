@@ -13,29 +13,25 @@ $horizontal_padding: 10px !default
 @import buttons/flat
 @import buttons/floating
 
+=default_styles($background_dark: $dark_blue, $background_light: $light_blue, $text_color: white, $text_shadow: $blue, $top_offset: -1px)
+    color: white
+    +text-shadow($text_shadow 0 -1px)
+    
+    background:
+        color: $background_dark
+        repeat: repeat-x
+        position: 0 $top_offset
+    +background-image(linear-gradient(top, $background_light, $background_dark))
+
 =buttons
     .button, input[type="submit"]
-        // Default Local Variables
-        $background_dark: $dark_blue
-        $background_light: $light_blue
-        $text_color: white
-        $text_shadow: $blue
-        $top_offset: -1px
+        +default_styles
         
-        // Other Colors
         &.neutral
-            $background_dark: $gray4
-            $background_light: $gray3
-            $text_color: $gray5
-            $text_shadow: white
-            $top_offset: 0
+            +default_styles($gray4, $gray3, $gray5, white, 0)
         
         &.negative
-            $background_dark: $dark_red
-            $background_light: $red
-            $text_color: white
-            $text_shadow: black
-            $top_offset: 0
+            +default_styles($dark_red, $red, white, black, 0)
         
         +box-sizing(border-box)
         +inline-block
@@ -55,9 +51,6 @@ $horizontal_padding: 10px !default
         
         text-align: center
         
-        color: white
-        +text-shadow($text_shadow 0 -1px)
-        
         height: $button
         
         padding: $vertical_padding $horizontal_padding
@@ -71,13 +64,6 @@ $horizontal_padding: 10px !default
         
         // Border
         border: 1px solid rgba(0,0,0,0.3)
-        
-        // Background
-        background:
-            color: $background_dark
-            repeat: repeat-x
-            position: 0 $top_offset
-        +background-image(linear-gradient(top, $background_light, $background_dark))
         
         // Special Buttons
         &.back
