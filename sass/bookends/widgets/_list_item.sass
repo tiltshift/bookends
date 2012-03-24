@@ -26,7 +26,7 @@
 //          </div>
 //      </a>
 
-=list_item
+=list_item($height: $list_item)
     .list_item
         +display-box
         +box-orient(horizontal)
@@ -39,8 +39,7 @@
         
         background-color: white
         
-        & + &
-            border-top: 1px solid rgba(0,0,0,0.25)
+        border-bottom: 1px solid rgba(0,0,0,0.25)
         
         &:before
             content: " "
@@ -66,7 +65,7 @@
             
             font-size: 17px
             color: $dark_text
-            line-height: $list_item
+            line-height: $height
         .dl
             +bold
             +antialiased
@@ -86,10 +85,10 @@
             +border-radius(20px)
             background-color: white
             
-            height: $list_item / 2
+            height: $height / 2
             
-            margin-top: $list_item / 4 - 1px
-            margin-right: ($list_item / 4) - $margin
+            margin-top: $height / 4 - 1px
+            margin-right: ($height / 4) - $margin
             
             color: $dark_text
             border: 1px solid $light_stroke
@@ -99,7 +98,7 @@
             
             +bold
             font-size: 14px
-            line-height: $list_item / 2
+            line-height: $height / 2
             
             &.solid
                 +box-shadow(none)
