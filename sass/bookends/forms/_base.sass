@@ -1,3 +1,5 @@
+@import reset
+
 =inputs
     textarea,
     select,
@@ -18,7 +20,7 @@
 
 =forms($label_position: left, $input_radius: 3px, $form_padding: 5px, $input_v_padding: 4px, $input_h_padding: 5px, $font_size: 18px, $label_width: 140px, $color: $dark_text, $placeholder_color: $light_text, $input_height: 40px, $input_width: 150px, $border: 1px solid black, $background: white)
     form
-        @import reset
+        +reset($label_position, $input_radius, $form_padding, $input_v_padding, $input_h_padding, $font_size, $label_width, $color, $placeholder_color, $input_height, $input_width, $border, $background)
         
         .form_wrap
             +border_box

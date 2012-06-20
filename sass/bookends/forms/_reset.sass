@@ -1,146 +1,147 @@
-// General Reset
-input[type="search"]::-webkit-search-decoration
-    display: none
-
-// For Firefox
-input,
-button,
-select,
-textarea
-    // Suppress red glow that Firefox
-    // adds to form fields by default.
-    &:invalid
-        +box-shadow(none)
-
-    &:focus,
-    &:active
-        +box-shadow(none)
-
-input[type="file"],
-input[type="radio"],
-input[type="checkbox"]
-    &:focus,
-    &:active
-        +box-shadow(none)
-
-button,
-input[type="reset"],
-input[type="submit"],
-input[type="button"]
-    -webkit-appearance: none
-    +background-clip(padding-box)
+=reset($label_position, $input_radius, $form_padding, $input_v_padding, $input_h_padding, $font_size, $label_width, $color, $placeholder_color, $input_height, $input_width, $border, $background)
+    // General Reset
+    input[type="search"]::-webkit-search-decoration
+        display: none
     
-    outline: 0
-    margin: 0
-    
-    cursor: pointer
-    
-    // Kill phantom spacing and dotted
-    // border that appears in Firefox.
-    &::-moz-focus-inner
-        border: 0
-        padding: 0
-
-+inputs
-    position: relative
-    +box-sizing(border-box)
-    +background-clip(padding-box)
-    +border-radius($input_radius)
-    -webkit-appearance: none
-    outline: 0
-    margin: 0
-    
-    border: $border
-    color: $color
-    background-color: $background
-    
-    width: $input_width
-    height: $input_height
-    
-    padding: $input_v_padding $input_h_padding
-    
-    font-size: $font_size
-    
-    vertical-align: top
-    // IE7
-    *padding-top: $input_v_padding
-    *padding-bottom: $input_v_padding - 1px
-    *height: auto
-
-button[disabled],
-input[disabled],
-select[disabled],
-select[disabled] option,
-select[disabled] optgroup,
-textarea[disabled]
-    -moz-user-select: -moz-none
-    -webkit-user-select: none
-    -khtml-user-select: none
-    user-select: none
-    
-    cursor: default
-
-// Separate rule for Firefox.
-// Separate rule for IE, too.
-// Cannot stack with WebKit's.
-input::-webkit-input-placeholder,
-textarea::-webkit-input-placeholder
-    color: $placeholder_color
-
-input:-moz-placeholder,
-textarea:-moz-placeholder
-    color: $placeholder_color
-
-input.placeholder_text,
-textarea.placeholder_text
-    color: $placeholder_color
-
-textarea,
-select[size],
-select[multiple]
-    height: auto
-
-// Set height back to normal,
-// for Opera, WebKit, and IE.
-select[size="0"],
-select[size="1"]
-    height: $input_height
-    // IE7
-    *height: auto
-
-// Tweaks for Safari + Chrome.
-@media (-webkit-min-device-pixel-ratio: 0)
-    select[size],
-    select[multiple],
-    select[multiple][size]
-        background-image: none
-    
+    // For Firefox
+    input,
+    button,
     select,
+    textarea
+        // Suppress red glow that Firefox
+        // adds to form fields by default.
+        &:invalid
+            +box-shadow(none)
+        
+        &:focus,
+        &:active
+            +box-shadow(none)
+    
+    input[type="file"],
+    input[type="radio"],
+    input[type="checkbox"]
+        &:focus,
+        &:active
+            +box-shadow(none)
+    
+    button,
+    input[type="reset"],
+    input[type="submit"],
+    input[type="button"]
+        -webkit-appearance: none
+        +background-clip(padding-box)
+        
+        outline: 0
+        margin: 0
+        
+        cursor: pointer
+        
+        // Kill phantom spacing and dotted
+        // border that appears in Firefox.
+        &::-moz-focus-inner
+            border: 0
+            padding: 0
+    
+    +inputs
+        position: relative
+        +box-sizing(border-box)
+        +background-clip(padding-box)
+        +border-radius($input_radius)
+        -webkit-appearance: none
+        outline: 0
+        margin: 0
+        
+        border: $border
+        color: $color
+        background-color: $background
+        
+        width: $input_width
+        height: $input_height
+        
+        padding: $input_v_padding $input_h_padding
+        
+        font-size: $font_size
+        
+        vertical-align: top
+        // IE7
+        *padding-top: $input_v_padding
+        *padding-bottom: $input_v_padding - 1px
+        *height: auto
+    
+    button[disabled],
+    input[disabled],
+    select[disabled],
+    select[disabled] option,
+    select[disabled] optgroup,
+    textarea[disabled]
+        -moz-user-select: -moz-none
+        -webkit-user-select: none
+        -khtml-user-select: none
+        user-select: none
+        
+        cursor: default
+    
+    // Separate rule for Firefox.
+    // Separate rule for IE, too.
+    // Cannot stack with WebKit's.
+    input::-webkit-input-placeholder,
+    textarea::-webkit-input-placeholder
+        color: $placeholder_color
+    
+    input:-moz-placeholder,
+    textarea:-moz-placeholder
+        color: $placeholder_color
+    
+    input.placeholder_text,
+    textarea.placeholder_text
+        color: $placeholder_color
+    
+    textarea,
+    select[size],
+    select[multiple]
+        height: auto
+    
+    // Set height back to normal,
+    // for Opera, WebKit, and IE.
     select[size="0"],
     select[size="1"]
-        padding-right: image-width("images/bookends/select.png") + 20px
-        &:after
-            position: absolute
-            top: 15px
-            right: 10px
-            content: " "
-            z-index: 3
-            
-            width: image-width("images/bookends/select.png")
-            height: (image-height("images/bookends/select.png") - 2px)/2
-            
-            background:
-                image: image-url("images/bookends/select.png")
-                position: bottom
-            
-            @media (-webkit-min-device-pixel-ratio: 2)
+        height: $input_height
+        // IE7
+        *height: auto
+    
+    // Tweaks for Safari + Chrome.
+    @media (-webkit-min-device-pixel-ratio: 0)
+        select[size],
+        select[multiple],
+        select[multiple][size]
+            background-image: none
+        
+        select,
+        select[size="0"],
+        select[size="1"]
+            padding-right: image-width("images/bookends/select.png") + 20px
+            &:after
+                position: absolute
+                top: 15px
+                right: 10px
+                content: " "
+                z-index: 3
+                
+                width: image-width("images/bookends/select.png")
+                height: (image-height("images/bookends/select.png") - 2px)/2
+                
                 background:
-                    image: image-url("images/bookends/select_2x.png")
-                +background-size(image-width("images/bookends/select.png"), image-height("images/bookends/select.png"))
-        &:hover:after
-            background-position: top
-
-textarea
-    min-height: $input_height
-    overflow: auto
-    resize: vertical
+                    image: image-url("images/bookends/select.png")
+                    position: bottom
+                
+                @media (-webkit-min-device-pixel-ratio: 2)
+                    background:
+                        image: image-url("images/bookends/select_2x.png")
+                    +background-size(image-width("images/bookends/select.png"), image-height("images/bookends/select.png"))
+            &:hover:after
+                background-position: top
+    
+    textarea
+        min-height: $input_height
+        overflow: auto
+        resize: vertical
