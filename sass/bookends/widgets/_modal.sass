@@ -1,5 +1,37 @@
+// Current Syntax
+//
+// <div id="modal_wrap" class="{% if show_modal %}show{% endif %}">
+//     <div id="modal">
+//         <div class="box">
+//             <header>
+//                 <span class="title">{{ modal_title }}</span>
+//                 {% if back_link %}<a href="{{ back_link }}" class="close"><span>Close</span></a>{% endif %}
+//             </header>
+//             <div class="content">
+//                 {% block modal %}{% endblock %}
+//             </div>
+//         </div>
+//     </div>
+//     {% if back_link %}
+//         {# don't show the overlay if this is the main focus of the window #}
+//         <div class="overlay"></div>
+//     {% endif %}
+// </div>
+// <div id="site_header">
+//     <a href="/" id="logo">shelfworthy</a>
+//     <form action="#" id="search">
+//         <input type="text" name="search" value="" id="search_field" placeholder="search..." />
+//     </form>
+//     <div id="user_actions">
+//         <img src="http://placekitten.com/54/54" />
+//         <span>{{ request.user.display_name }}</span>
+//         <a href="{% url settings %}" class="button">settings</a>
+//         <a href="{% url logout %}" class="button">logout</a>
+//     </div>
+// </div>
 
-=modal($modal_header: 60px, $modal_margin: 20px)
+
+=modal($modal_width: 576px, $modal_header: 60px, $modal_margin: 20px)
     #modal_wrap
         position: fixed
         top: 0
@@ -23,7 +55,7 @@
                 position: relative
                 z-index: 25
                 margin: 100px auto
-                width: $form_width
+                width: $modal_width
                 
                 +border-radius(3px)
                 background-color: white

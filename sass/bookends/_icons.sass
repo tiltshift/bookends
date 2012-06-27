@@ -1,17 +1,30 @@
 +webfont('Icons', 'bookends/icons-webfont', 'IconFontRegular')
++webfont('Bookends', 'bookends/bookends-regular-webfont', 'BookendsRegular')
++webfont('Oct', 'bookends/octicons-regular-webfont', 'Octicons Regular')
 
 @mixin icon_font
-    font-family: 'Icons', sans-serif
+    font-family: 'Bookends', sans-serif
     -webkit-font-smoothing: antialiased
     
-    font-size: 19px
-    line-height: 10px
+    font-size: 32px
+    line-height: 32px
     font-weight: normal !important
     font-style: normal !important
 
 .icon
+    display: block
+    width: 32px
+    height: 32px
+    
     &:before
         +icon_font
+    
+    &.test_a:before
+        content: "A"
+    &.test_b:before
+        content: "B"
+    &.test_c:before
+        content: ""
     
     &.back_arrow:before
         content: "<"
