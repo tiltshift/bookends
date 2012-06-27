@@ -1,0 +1,92 @@
+
+=modal($modal_header: 60px, $modal_margin: 20px)
+    #modal_wrap
+        position: fixed
+        top: 0
+        right: 0
+        bottom: 0
+        left: 0
+        z-index: 21
+        
+        // TODO annimate!
+        display: none
+        
+        #modal
+            position: absolute
+            top: 0
+            right: 0
+            bottom: 0
+            left: 0
+            
+            .box
+                +box-sizing(border-box)
+                position: relative
+                z-index: 25
+                margin: 100px auto
+                width: $form_width
+                
+                +border-radius(3px)
+                background-color: white
+                +box-shadow(rgba(0,0,0,0.5) 0 2px 3px)
+                
+                header
+                    .title
+                        +bold
+                        +single_line
+                        color: $dark_text
+                        font-size: 24px
+                        line-height: $modal_header
+                        padding: 0 81px 0 $modal_margin
+                    
+                    .close
+                        position: absolute
+                        top: -2px
+                        right: $margin*3
+                        
+                        padding: 16px 18px
+                        
+                        span
+                            +image("images/project/icon_close.png")
+                        
+                        background-color: $light_bg
+                        
+                        &:hover
+                            background-color: lighten($light_bg, 2%)
+                        &:active
+                            top: -1px
+                            +box-shadow(rgba(0,0,0,0.1) 0 0 0)
+                        
+                        +border-bottom-radius(3px)
+                        border: 1px solid $light_stroke
+                        border-top: 1px solid rgba(255,255,255,0.3)
+                        +box-shadow(rgba(0,0,0,0.1) 0 2px 2px)
+                
+                .content
+                    position: relative
+                    +clearfix
+                    
+                    background-color: $light_bg
+                    +box-shadow(rgba(0,0,0,0.1) 0 1px 0 0 inset)
+                    +border-bottom-radius(3px)
+                    
+                    padding: $modal_margin
+        
+        .overlay
+            position: absolute
+            top: 0
+            right: 0
+            bottom: 0
+            left: 0
+            z-index: 21
+            
+            background-color: rgba(0,0,0,0)
+            
+            pointer-events: none
+        
+        &.show
+            display: block
+            
+            .overlay
+                background-color: rgba(0,0,0,0.4)
+                
+                pointer-events: all
