@@ -1,39 +1,25 @@
-+webfont('Icons', 'bookends/icons-webfont', 'IconFontRegular')
++webfont('Bookends', 'bookends/bookends-regular-webfont', 'Bookends Regular')
 
 @mixin icon_font
-    font-family: 'Icons', sans-serif
+    +inline-block
+    
+    font:
+        family: 'Bookends', sans-serif
+        size: 32px
+        weight: normal
+        style: normal
+    
     -webkit-font-smoothing: antialiased
     
-    font-size: 19px
-    line-height: 10px
-    font-weight: normal !important
-    font-style: normal !important
+    line-height: 1
+    text-decoration: none
 
 .icon
     &:before
         +icon_font
     
-    &.back_arrow:before
-        content: "<"
-    &.plus:before
-        content: "+"
-    &.check:before
-        content: "v"
-    &.info:before
-        content: "i"
-    &.error:before
-        content: "!"
-    &.down:before
-        content: "6"
-    &.settings:before
-        content: "G"
-    &.arrow:before
-        content: "a"
-    &.settings:before
-        content: "G"
-    &.calendar:before
-        content: "W"
-    &.list:before
-        content: "Q"
-    &.thumbs_up:before
-        content: "R"
+    &.icon_add:before
+        content: "\f000"
+    &.icon_close:before
+        content: "\f001"
+        margin-bottom: -14px
