@@ -54,12 +54,19 @@ this.Noisy = new Class({
 		// get the existing value for background-image
 		var existingBackground = this.element.getStyle('background-image');
 		
-		if (existingBackground) {
+		if (existingBackground != "none") {
 			existingBackground = ", " + existingBackground;
+		} else {
+			existingBackground = ""
 		}
 		
 		this.element.setStyle('background-image', 'url(' + uri + ')' + existingBackground);
-
+		
+		// if (window.devicePixelRatio > 1 && existingBackground == "") {
+		// 	// retina size the noise. This won't work with an existing background as it will also resize that background.
+		// 	this.element.setStyle('background-size', size/2 + 'px, ' + size/2 + 'px');
+		// }
+		
 		return this;
 	},
 

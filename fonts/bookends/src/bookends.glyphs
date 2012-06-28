@@ -1,6 +1,7 @@
 {
 DisplayStrings = (
-/uniF000
+/uniF000,
+/uniF002
 );
 copyright = "Copyright \U00A9 2012 by Shelfworthy. All rights reserved.";
 date = "2012-06-27 20:54:02 +0000";
@@ -77,6 +78,83 @@ width = 1152;
 }
 );
 unicode = F001;
+},
+{
+glyphname = uniF002;
+lastChange = "2012-06-28 14:53:40 -0500";
+layers = (
+{
+layerId = "54DBA722-033D-4E59-BFFB-AE9AD7D6C953";
+name = Regular;
+paths = (
+{
+closed = 1;
+nodes = (
+"320 1664 LINE SMOOTH",
+"224 1664 OFFCURVE",
+"128 1600 OFFCURVE",
+"128 1472 CURVE SMOOTH",
+"128 64 LINE SMOOTH",
+"128 -32 OFFCURVE",
+"224 -128 OFFCURVE",
+"320 -128 CURVE SMOOTH",
+"1216 -128 LINE SMOOTH",
+"1312 -128 OFFCURVE",
+"1408 -32 OFFCURVE",
+"1408 64 CURVE",
+"1408 1472 LINE",
+"1408 1600 OFFCURVE",
+"1312 1664 OFFCURVE",
+"1216 1664 CURVE SMOOTH"
+);
+},
+{
+closed = 1;
+nodes = (
+"1280 32 OFFCURVE",
+"1248 0 OFFCURVE",
+"1216 0 CURVE SMOOTH",
+"320 0 LINE SMOOTH",
+"288 0 OFFCURVE",
+"256 32 OFFCURVE",
+"256 64 CURVE SMOOTH",
+"256 512 LINE",
+"1280 512 LINE",
+"1280 64 LINE SMOOTH"
+);
+},
+{
+closed = 1;
+nodes = (
+"1152 576 LINE",
+"1152 1216 LINE",
+"1024 1216 LINE",
+"1024 576 LINE",
+"960 576 LINE",
+"960 1344 LINE",
+"832 1344 LINE",
+"832 576 LINE",
+"768 576 LINE",
+"768 1152 LINE",
+"640 1152 LINE",
+"640 576 LINE",
+"256 576 LINE",
+"256 1472 LINE SMOOTH",
+"256 1504 OFFCURVE",
+"288 1536 OFFCURVE",
+"320 1536 CURVE SMOOTH",
+"1216 1536 LINE SMOOTH",
+"1248 1536 OFFCURVE",
+"1280 1504 OFFCURVE",
+"1280 1472 CURVE SMOOTH",
+"1280 576 LINE"
+);
+}
+);
+width = 600;
+}
+);
+unicode = F002;
 }
 );
 gridLength = 32;
