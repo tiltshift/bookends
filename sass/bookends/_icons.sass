@@ -1,52 +1,24 @@
-+webfont('Icons', 'bookends/icons-webfont', 'IconFontRegular')
-+webfont('Bookends', 'bookends/bookends-regular-webfont', 'BookendsRegular')
-+webfont('Oct', 'bookends/octicons-regular-webfont', 'Octicons Regular')
++webfont('Bookends', 'bookends/bookends-regular-webfont', 'Bookends Regular')
 
 @mixin icon_font
-    font-family: 'Bookends', sans-serif
+    +inline-block
+    
+    font:
+        family: 'Bookends', sans-serif
+        size: 32px
+        weight: normal
+        style: normal
+    
     -webkit-font-smoothing: antialiased
     
-    font-size: 32px
-    line-height: 32px
-    font-weight: normal !important
-    font-style: normal !important
+    line-height: 1
+    text-decoration: none
 
 .icon
-    display: block
-    width: 32px
-    height: 32px
-    
     &:before
         +icon_font
     
-    &.test_a:before
-        content: "A"
-    &.test_b:before
-        content: "B"
-    &.test_c:before
-        content: ""
-    
-    &.back_arrow:before
-        content: "<"
-    &.plus:before
-        content: "+"
-    &.check:before
-        content: "v"
-    &.info:before
-        content: "i"
-    &.error:before
-        content: "!"
-    &.down:before
-        content: "6"
-    &.settings:before
-        content: "G"
-    &.arrow:before
-        content: "a"
-    &.settings:before
-        content: "G"
-    &.calendar:before
-        content: "W"
-    &.list:before
-        content: "Q"
-    &.thumbs_up:before
-        content: "R"
+    &.icon_add:before
+        content: "\f000"
+    &.icon_close:before
+        content: "\f001"
