@@ -9,7 +9,7 @@
 <glyph horiz-adv-x="0" />
 <glyph />
 <glyph unicode="&#xe000;" horiz-adv-x="500" d="M0 0z" />
-<glyph unicode="&#xf000;" d="M512 640v256h384v384h256v-384h384v-256h-384v-384h-256v384h-384z" />
-<glyph unicode="&#xf001;" d="M448 416l352 352l-352 352l224 224l352 -352l352 352l224 -224l-352 -352l352 -352l-224 -224l-352 352l-352 -352z" />
+<glyph unicode="&#xf000;" horiz-adv-x="1024" d="M0 640v256h384v384h256v-384h384v-256h-384v-384h-256v384h-384z" />
+<glyph unicode="&#xf001;" horiz-adv-x="1152" d="M0 416l352 352l-352 352l224 224l352 -352l352 352l224 -224l-352 -352l352 -352l-224 -224l-352 352l-352 -352z" />
 </font>
 </defs></svg> 
