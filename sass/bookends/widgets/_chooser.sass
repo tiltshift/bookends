@@ -32,15 +32,10 @@
             
             // Extend Touch and Click Area
             &:before
+                display: block
                 $touch_margin: -$button_margin - 1px
 
-                content: " "
-                display: block
-                position: absolute
-                top: $touch_margin
-                right: $touch_margin
-                bottom: $touch_margin
-                left: $touch_margin
+                +before($touch_margin)
             
             // text
             +bold

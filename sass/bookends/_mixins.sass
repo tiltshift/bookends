@@ -47,16 +47,32 @@
     -webkit-text-stroke-width: $stroke-width
     -webkit-text-stroke-color: $stroke-color
 
+=before($offset: none, $top: none, $right: none, $bottom: none, $left: none)
+    position: absolute
+    
+    @if $top != none
+        top: $top
+    @else if $offset != none
+        top: $offset
+    @if $right != none
+        right: $right
+    @else if $offset != none
+        right: $offset
+    @if $bottom != none
+        bottom: $bottom
+    @else if $offset != none
+        bottom: $offset
+    @if $left != none
+        left: $left
+    @else if $offset != none
+        left: $offset
+    content: " "
+
 =extra_border($size, $type, $color, $radius: 0, $offset: 0)
     position: relative
     
     &:before
-        content: " "
-        position:  absolute
-        top: $offset
-        right: $offset
-        bottom: $offset
-        left: $offset
+        +before($offset: $offset)
         
         +border-radius($radius)
         border: $size $type $color
@@ -65,12 +81,7 @@
     position: relative
     
     &:before
-        content: " "
-        position: absolute
-        top: 0
-        bottom: 0
-        left: 0
-        right: 0
+        +before($offset: $offset)
         z-index: 20
         
         pointer-events: none
