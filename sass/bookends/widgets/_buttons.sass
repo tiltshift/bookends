@@ -33,10 +33,9 @@ $horizontal_padding: 10px !default
         &.negative
             +default_styles($dark_red, $red, white, black, 0)
         
-        
         +inline-block
         +border-radius($interior_border_radius)
-        +transition(background-position, 0.1s, ease-in-out)
+        +transition(all, 0.1s, ease-in-out)
         
         position: relative
         
@@ -85,7 +84,7 @@ $horizontal_padding: 10px !default
         .mouse &:hover
             background-position: 0 -10px
         .mouse &:active, .active
-            top: 1px
+            padding-top: $vertical_padding + 1
     
     // Help Firefox not be a jerk about adding extra padding to buttons
     button.button,
