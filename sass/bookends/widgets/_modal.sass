@@ -39,28 +39,28 @@
         bottom: 0
         left: 0
         z-index: 21
-        
+
         // TODO annimate!
         display: none
-        
+
         #modal
             position: absolute
             top: 0
             right: 0
             bottom: 0
             left: 0
-            
+
             .box
-                
+
                 position: relative
                 z-index: 25
                 margin: 100px auto
                 width: $modal_width
-                
+
                 +border-radius(3px)
                 background-color: white
                 +box-shadow(rgba(0,0,0,0.5) 0 2px 3px)
-                
+
                 header
                     .title
                         +bold
@@ -69,50 +69,50 @@
                         font-size: 24px
                         line-height: $modal_header
                         padding: 0 81px 0 $modal_margin
-                    
+
                     .close
                         +transition(all, 0.1s)
                         position: absolute
                         top: -2px
                         right: $margin*3
-                        
+
                         padding: 14px 18px 18px 18px
-                        
+
                         background-color: $light_gray
-                        
+
                         color: $black
                         +text-shadow(rgba(255,255,255,1) 0 1px)
-                        
+
                         +border-bottom-radius(3px)
                         border: 1px solid #c7c7c7
                         border-top-color: lighten(#c7c7c7, 15%)
-                        
+
                         $white-shadow: rgba(255,255,255,0.5) 0 1px 0 inset
-                        
+
                         +box-shadow($white-shadow, rgba(0,0,0,0.1) 0 2px 2px)
-                        
+
                         +respond-to(retina)
                             +box-shadow($white-shadow, rgba(0,0,0,0.1) 0 1px 2px)
-                        
+
                         &:hover
                             background-color: lighten($light_gray, 2%)
                         &:active
                             top: -1px
                             +box-shadow($white-shadow, rgba(0,0,0,0.1) 0 0 0)
-                
+
                 .content
                     position: relative
                     +clearfix
-                    
+
                     background-color: $light_gray
                     +border-bottom-radius(3px)
-                    
+
                     +box-shadow(rgba(0,0,0,0.1) 0 1px 0 0 inset)
                     +respond-to(retina)
                         +box-shadow(rgba(0,0,0,0.4) 0 1px 1px -1px inset)
-                    
+
                     padding: $modal_margin
-        
+
         .overlay
             position: absolute
             top: 0
@@ -120,15 +120,15 @@
             bottom: 0
             left: 0
             z-index: 21
-            
+
             background-color: rgba(0,0,0,0)
-            
+
             pointer-events: none
-        
+
         &.show
             display: block
-            
+
             .overlay
                 background-color: rgba(0,0,0,0.4)
-                
+
                 pointer-events: all
