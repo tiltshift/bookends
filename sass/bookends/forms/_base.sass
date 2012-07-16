@@ -1,4 +1,5 @@
 @import reset
+@import clear
 
 =inputs
     textarea,
@@ -21,26 +22,30 @@
 =forms($label_position: left, $input_radius: 3px, $form_padding: 5px, $input_v_padding: 4px, $input_h_padding: 5px, $font_size: 18px, $label_width: 140px, $color: $dark_text, $placeholder_color: $light_text, $input_height: 40px, $input_width: 150px, $border: 1px solid black, $background: white)
     form
         +reset($label_position, $input_radius, $form_padding, $input_v_padding, $input_h_padding, $font_size, $label_width, $color, $placeholder_color, $input_height, $input_width, $border, $background)
-        
+
         padding: $form_padding
-        
+
         .input_wrap
+            position: relative
+
+            +clearable($input_height)
+
             + .input_wrap
                 margin-top: $margin
-            
+
             .html_wrap
                 // used to wrap html used inside of a form
                 +inline-block
-            
+
             label
                 width: $label_width
-                
+
                 color: $color
                 font-size: $font_size
                 line-height: $input_height
-                
+
                 @if $label_position == left
                     +inline_block
                 @if $label_position == top
                     display: block
-                
+

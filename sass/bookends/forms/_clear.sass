@@ -1,0 +1,70 @@
+// an 'x' element that allows you to clear a field by clicking on it. Requires JS support
+//
+// <div class="input_wrap">
+//     <input type="text" placeholder="Search..." >
+//     <span class="close_x"></span>
+// </div>
+
+=clearable($input_height)
+    .close_wrap
+        position: absolute
+        top: 0
+        right: 0
+        bottom: 0
+        z-index: 10
+
+        width: $input_height
+
+        overflow: hidden
+
+        .close_x
+            +transition(all 0.2s ease-in-out)
+            +icon_font
+
+            &:before
+                content: "\f002"
+
+            line-height: 30px
+            position: absolute
+            right: 0
+
+            +opacity(0.5)
+
+            &:hover
+                +opacity(1)
+
+            +translate(100%, 0)
+            -webkit-transform: translate3d(100%, 0, 0)
+
+            &.show
+                +translate(0, 0)
+                -webkit-transform: translate3d(0, 0, 0)
+
+
+
+        // +transition(all 0.3s ease-in-out)
+
+        // &:before
+        //     +transition(opacity 0.1s ease-in-out)
+
+        //     +icon_font
+        //     content: "\f002"
+
+        //     +opacity(0.5)
+
+        // &:hover
+        //     +opacity(1)
+
+        // position: absolute
+        // top: 50%
+        // right: 0px
+        // z-index: 10
+
+        // padding-right: $margin
+
+        // +translate(100%, 0)
+        // -webkit-transform: translate3d(100%, 0, 0)
+
+        // &.show
+        //     +translate(0, 0)
+        //     -webkit-transform: translate3d(0, 0, 0)

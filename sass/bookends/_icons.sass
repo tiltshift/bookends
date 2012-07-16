@@ -2,24 +2,26 @@
 
 @mixin icon_font
     +inline-block
-    
+
     font:
         family: 'Bookends', sans-serif
         size: 32px
         weight: normal
         style: normal
-    
+
     -webkit-font-smoothing: antialiased
-    
+
     line-height: 1
     text-decoration: none
 
 .icon
     &:before
         +icon_font
-    
+
     &.icon_add:before
         content: "\f000"
     &.icon_close:before
         content: "\f001"
         margin-bottom: -14px
+    &.icon_form_close:before
+        content: "\f002"
