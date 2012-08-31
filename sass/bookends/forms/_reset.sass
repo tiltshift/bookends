@@ -118,17 +118,21 @@
         select[multiple][size]
             background-image: none
 
+        .select_wrap
+            display: inline
+            position: relative
+
         select,
         select[size="0"],
         select[size="1"]
             position: relative
 
-            padding-right: image-width("images/bookends/select.png") + 20px
+            padding-right: image-width("images/bookends/select.png") + 25px
 
             & + .select_arrow
                 position: absolute
-                top: 15px
-                right: 10px
+                top: 5px
+                right: 15px
                 z-index: 3
 
                 width: image-width("images/bookends/select.png")
