@@ -1,34 +1,48 @@
 =slab_colors($background_color: $light_blue, $border_color: $blue)
-    border: 1px solid $border_color
-    border-bottom-width: 2px
-    
+    background-color: $background_color
+
+    border-color: $blue lighten($blue, 10%)
+    +box-shadow(rgba(255,255,255,0.3) 0 1px inset, rgba(255,255,255,0.1) 0 0 0 1px inset, $blue 0 1px, lighten($blue, 15%) 0 3px, lighten($blue, 2%) 0 4px, rgba(0, 0, 0, 0.5) 0 3px 2px )
+
     background:
         image: none !important
         color: $background_color
-    
-    &.selected
-        color: $border_color
-    
-    .mouse &:hover
+
+    &:hover
         background-color: lighten($background_color, 5%)
+
+    &:hover:active, &:hover.selected
+        background-color: $background_color
 
 =slab_buttons
     .button, input[type="submit"]
+        +box-sizing(content-box)
+        height: $button - $vertical_padding * 2
+        margin-bottom: 4px
+
+        +border-radius(3px)
+        border:
+            width: 1px 1px 0px
+            style: solid
+
         +slab_colors
-        
+
         &.gray
             +slab_colors($light_gray, $dark_gray)
             color: $dark_text
-        
+
         &.negative
             +slab_colors($red, $dark_red)
-        
-        +border-radius(2px)
-        
-        .mouse &:active, &.selected
-            top: 1px
-            border-bottom-width: 1px
-        
+
+        &:active, &.selected
+            top: 6px
+            padding: 8px 11px
+            margin-bottom: 5px
+            border-width: 0
+
+            +box-shadow(rgba(0, 0, 0, 0.3) 0 0 3px inset, rgba(0, 0, 0, 0.5) 0 1px 1px inset, white 0 1px)
+
         &.selected
-            background-color: white !important
             cursor: default
+
+        @content
