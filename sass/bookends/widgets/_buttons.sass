@@ -15,7 +15,7 @@ $horizontal_padding: 10px !default
 =default_styles($background_dark: $dark_blue, $background_light: $light_blue, $text_color: white, $text_shadow: $blue, $top_offset: -1px)
     color: white
     +text-shadow($text_shadow 0 -1px)
-    
+
     background:
         color: $background_dark
         repeat: repeat-x
@@ -25,66 +25,66 @@ $horizontal_padding: 10px !default
 =buttons
     .button, input[type="submit"]
         +default_styles
-        
+
         &.gray
             +default_styles($gray4, $gray3, $gray5, white, 0)
-        
+
         &.negative
             +default_styles($dark_red, $red, white, black, 0)
-        
+
         +inline-block
         +border-radius($interior_border_radius)
         +transition(all, 0.1s, ease-in-out)
-        
+
         position: relative
-        
+
         cursor: pointer
-        
+
         // Normal Sizing
-        
+
         +bold
         font-size: 12px
         line-height: 12px
         +antialiased
-        
+
         text-align: center
-        
+
         height: $button
-        
+
         padding: $vertical_padding $horizontal_padding
-        
+
         .icon
             float: left
             padding-right: $horizontal_padding
-        
+
         & + &
             margin-left: $button_margin
-        
+
         // Border
         border: 1px solid rgba(0,0,0,0.3)
-        
+
         // Special Buttons
         &.back
             .icon
                 +icon_font
-                
+
                 margin-top: -1px
-                
+
                 &:before
                     content: "<"
-        
+
         // Extend Touch and Click Area
         &:before
             display: block
             $touch_margin: -$button_margin - 1px
-            
+
             +before($touch_margin)
-        
+
         .mouse &:hover
             background-position: 0 -10px
         .mouse &:active, .active
             padding-top: $vertical_padding + 1
-    
+
     // Help Firefox not be a jerk about adding extra padding to buttons
     button.button,
     input[type=submit].button
