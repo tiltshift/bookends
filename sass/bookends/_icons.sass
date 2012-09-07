@@ -14,6 +14,9 @@
     line-height: 1
     text-decoration: none
 
+%icon_x
+    content: "\f001"
+
 .icon
     &:before
         +icon_font
@@ -21,7 +24,7 @@
     &.icon_plus:before
         content: "\f000"
     &.icon_x:before
-        content: "\f001"
+        @extend %icon_x
     &.icon_check:before
         content: "\f002"
 
