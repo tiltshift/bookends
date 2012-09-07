@@ -1,4 +1,7 @@
 {
+DisplayStrings = (
+/uniF001
+);
 copyright = "Copyright \U00A9 2012 by Shelfworthy. All rights reserved.";
 date = "2012-06-27 20:54:02 +0000";
 designer = Shelfworthy;
@@ -53,7 +56,7 @@ unicode = F000;
 },
 {
 glyphname = uniF001;
-lastChange = "2012-09-07 18:28:39 +0000";
+lastChange = "2012-09-07 19:01:15 +0000";
 layers = (
 {
 layerId = "54DBA722-033D-4E59-BFFB-AE9AD7D6C953";
@@ -62,22 +65,22 @@ paths = (
 {
 closed = 1;
 nodes = (
-"672 768 LINE",
-"960 1056 LINE",
-"768 1248 LINE",
-"480 960 LINE",
-"192 1248 LINE",
-"0 1056 LINE",
-"288 768 LINE",
+"704 768 LINE",
+"1024 1088 LINE",
+"800 1280 LINE",
+"512 992 LINE",
+"192 1280 LINE",
+"0 1088 LINE",
+"320 768 LINE",
 "0 480 LINE",
-"192 288 LINE",
-"480 576 LINE",
-"768 288 LINE",
-"960 480 LINE"
+"192 256 LINE",
+"512 576 LINE",
+"832 256 LINE",
+"1024 480 LINE"
 );
 }
 );
-width = 960;
+width = 1024;
 }
 );
 unicode = F001;
