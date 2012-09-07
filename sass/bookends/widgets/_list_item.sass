@@ -1,12 +1,12 @@
 //  List Item Syntax
-//  
+//
 //  note:   the .left and .right div's are optional.
 //          these elements take president over the content
 //          so be careful they aren't too wide so that the text
 //          can still be read.
-//          
+//
 //          A list item needs at least one child element with one of the follwoing classes:
-//          
+//
 //          .sl a single line of text
 //          .dl a double line of text, use .line1 and .line2
 //          .content is for any other design and has no default.
@@ -32,32 +32,30 @@
         +box-orient(horizontal)
         +box-align(stretch)
         +box-pack(justify)
-        
-        
-        
+
+
+
         position: relative
-        
+
         background-color: white
-        
+
         border-bottom: 1px solid rgba(0,0,0,0.25)
-        
-        &:before
-            +before(0)
-            
+
+        +before(0)
             border-top: 1px solid rgba(255,255,255,0.6)
-        
+
         .right
             text-align: right
-        
+
         // Content
         .content, .sl, .dl
             padding: 0 $margin * 2
             +box-flex(1)
-        
+
         .sl
             +light
             +single_line
-            
+
             font-size: 17px
             color: $dark_text
             line-height: $height
@@ -66,7 +64,7 @@
             +antialiased
             font-size: 14px
             line-height: 17px
-            
+
             .line1
                 +single_line
                 padding-top: 5px
@@ -74,48 +72,48 @@
             .line2
                 +single_line
                 color: $light_text
-        
+
         .count
             float: right
             +border-radius(20px)
             background-color: white
-            
+
             height: $height / 2
-            
+
             margin-top: $height / 4 - 1px
             margin-right: ($height / 4) - $margin
-            
+
             color: $dark_text
             border: 1px solid $light_stroke
             +box-shadow($light_stroke 0 1px 0 0 inset)
-            
+
             padding: 0 10px
-            
+
             +bold
             font-size: 14px
             line-height: $height / 2
-            
+
             &.solid
                 +box-shadow(none)
                 background-color: $light_text
                 color: white
-    
+
     a.list_item
         padding-right: 25px + $margin
-        
+
         .mouse &:hover
             background-color: $hover
-        
+
         .mouse &:active, .touch &.active
             color: white
             background-color: $blue
-        
+
         // if the whole list item is a link it should always have an arrow
         background:
             image: inline-image("images/bookends/arrow.png")
             repeat: no-repeat
             position: right center
-        
+
         @media (-webkit-min-device-pixel-ratio: 2)
             background-image: inline-image("images/bookends/arrow_2x.png")
             +background-size(image-width("images/bookends/arrow.png") image-height("images/bookends/arrow.png"))

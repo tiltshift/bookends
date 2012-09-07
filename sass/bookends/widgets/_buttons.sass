@@ -74,11 +74,8 @@ $horizontal_padding: 10px !default
                     content: "<"
 
         // Extend Touch and Click Area
-        &:before
+        +before($touch_margin)
             display: block
-            $touch_margin: -$button_margin - 1px
-
-            +before($touch_margin)
 
         .mouse &:hover
             background-position: 0 -10px

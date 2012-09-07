@@ -3,19 +3,19 @@
     left: 0
     right: 0
     bottom: 0
-    
+
     height: $footer_height
-    
+
     +fixed_gradient_back
     border-top: 1px solid $fixed_border
-    
+
     +fixed_white_shadow
-    
+
     +display-box
     +box-orient(horizontal)
     +box-align(stretch)
-    
-    
+
+
     .tab_noise
         position: absolute
         top: 0
@@ -24,71 +24,70 @@
         left: 0
 
         pointer-events: none
-    
+
     .bump
         position: relative
         +box-flex(1)
-        
+
         +display-box
         +box-orient(horizontal)
         +box-align(stretch)
-        
+
         margin-top: -4px
-        
+
         +border-radius(5px)
         +fixed_gradient_back
         +fixed_white_shadow
         border-top: 1px solid $fixed_border
-        
+
         a
             // more margin to make up for border
             margin: 4px
-            
+
             // make up for the fact that we're adding a real
             // border only to the top
         margin-top: 3px
-        
-        &:before, &:after
-            +before($top: 2px, $bottom: -1px, $left: 0px)
-            
+
+        +before($top: 2px, $bottom: -1px, $left: 0px)
+
             width: 1px
-            
+
             +border-radius(5px)
             +background(linear-gradient(top, $fixed_border, $fixed_border_transparnet))
         &:after
             right: 0px
             left: auto
     a
-        
+
         +box-flex(1)
         display: block
-        
+
         +bold
         color: rgba(255,255,255,0.5)
         text-align: center
         font-size: 10px
         +text-shadow(black 0 1px 1px)
-        
+
         padding-top: $footer_height - 19px
-        
+
         margin: 3px
-        
+
         // the full height minus the margin
         height: $footer_height - 6px !important
-        
+
         +border-radius(3px)
         border: 1px solid transparent
-        
+
         // for icon position
         background-position: center 2px
-        
+
         &.selected
             color: white
-            
+
             background-color: rgba(0,0,0,.2)
-            
+
             border: 1px solid rgba(0,0,0,.35)
             +box-shadow(rgba(255,255,255,0.25) 0 1px 0)
-            
+
             // for icon position
             background-position: center bottom

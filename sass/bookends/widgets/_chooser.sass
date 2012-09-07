@@ -1,5 +1,5 @@
 //  Chooser Syntax
-//      
+//
 //      <div class="chooser">
 //          <a href="#" class="selected">Text or Icon</a>
 //          <a herf="#">Text of Icon</a>
@@ -11,52 +11,49 @@
 =chooser($style: gray)
     .chooser
         +inline-block
-        
-        
+
+
         position: relative
-        
+
         @if $style == gray
             +gray
-        
+
         height: $button
         margin: $button-margin
-        
+
         a
-            
+
             display: block
             position: relative
             float: left
-            
+
             height: $button
             padding: 7px 10px
-            
-            // Extend Touch and Click Area
-            &:before
-                display: block
-                $touch_margin: -$button_margin - 1px
 
-                +before($touch_margin)
-            
+            // Extend Touch and Click Area
+            +before($touch_margin)
+                display: block
+
             // text
             +bold
             font-size: 14px
             +antialiased
-            
+
             text-align: center
-            
+
             &.selected
                 cursor: default
-                
+
                 margin: -1px
-        
+
         // when full width, use box
         .full_width &
             +display-box
             +box-orient(horizontal)
             +box-align(stretch)
-            
+
             width: 100%
-            
+
             a
                 float: none
                 +box-flex(1)
