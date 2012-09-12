@@ -14,8 +14,13 @@
     &:hover:active, &:hover.selected
         background-color: $background_color
 
+    &:active, &.selected
+        border-color: darken($background_color, 30%)
+        +box-shadow(transparentize(darken($background_color, 30%), .6) 0 0 $height inset, transparentize(darken($background_color, 30%), .3) 0 1px 1px inset, rgba(255,255,255,0.35) 0 1px)
+
 =slab_buttons($height: 3px)
     .button, input[type="submit"]
+        +transition(box-shadow .1s ease-in-out, top .1s ease-in-out, border .05s ease-in-out .05s)
         +box-sizing(content-box)
         height: $button - $vertical_padding * 2
         top: -$height - 1px
@@ -38,11 +43,8 @@
 
         &:active, &.selected
             top: 0
-            padding: $vertical_padding $horizontal_padding + 1px
-            margin-bottom: $height + 1px
-            border-width: 0
-
-            +box-shadow(rgba(0, 0, 0, 0.3) 0 0 $height inset, rgba(0, 0, 0, 0.5) 0 1px 1px inset, rgba(255,255,255,0.35) 0 1px)
+            //padding: $vertical_padding $horizontal_padding + 1px
+            margin-bottom: $height
 
         &.selected
             cursor: default
