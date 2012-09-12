@@ -2,7 +2,7 @@
     background-color: $background_color
 
     border-color: $blue lighten($blue, 10%)
-    +box-shadow(rgba(255,255,255,0.3) 0 1px inset, rgba(255,255,255,0.1) 0 0 0 1px inset, $blue 0 1px, lighten($blue, 15%) 0 $height, lighten($blue, 2%) 0 $height + 1px, rgba(0, 0, 0, 0.4) 0 $height + 2px 2px )
+    +box-shadow(rgba(255,255,255,0.3) 0 1px inset, rgba(255,255,255,0.1) 0 0 0 1px inset, $blue 0 1px, lighten($blue, 15%) 0 $height, lighten($blue, 2%) 0 $height + 1px, rgba(0, 0, 0, 0.4) 0 $height + 2px 2px)
 
     background:
         image: none !important
@@ -20,7 +20,7 @@
 
 =slab_buttons($height: 3px)
     .button, input[type="submit"]
-        +transition(box-shadow .1s ease-in-out, top .1s ease-in-out, border .05s ease-in-out .05s)
+        +transition(box-shadow .08s ease-in-out, top .08s ease-in-out, border .04s ease-in-out .04s)
         +box-sizing(content-box)
         height: $button - $vertical_padding * 2
         top: -$height - 1px
@@ -43,8 +43,7 @@
 
         &:active, &.selected
             top: 0
-            //padding: $vertical_padding $horizontal_padding + 1px
-            margin-bottom: $height
+            padding-bottom: $vertical_padding - 2px
 
         &.selected
             cursor: default
