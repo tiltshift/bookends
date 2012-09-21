@@ -1,5 +1,13 @@
 // A basic media query mixin that makes responsive work simple.
 
+=ipad
+    .ios.wide &
+        @content
+
+=iphone
+    .ios.narrow &
+        @content
+
 =respond-to($device)
     @if $device == handheld
         @media only screen and (min-width : 320px)
