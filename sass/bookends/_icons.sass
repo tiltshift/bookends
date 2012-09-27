@@ -14,19 +14,19 @@
     line-height: 1
     text-decoration: none
 
-%icon_x
+%x
     content: "\f002"
 
 .icon
     &:before
         +icon_font
 
-    &.icon_plus:before
+    &.plus:before
         content: "\f001"
-    &.icon_x:before
-        @extend %icon_x
-    &.icon_check:before
+    &.x:before
+        @extend %x
+    &.check:before
         content: "\f003"
 
-    &.icon_form_close:before
+    &.clear_form:before
         content: "\f050"
