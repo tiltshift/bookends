@@ -5,7 +5,6 @@
 
     font:
         family: 'Bookends', sans-serif
-        size: 32px
         weight: normal
         style: normal
 
@@ -14,12 +13,17 @@
     line-height: 1
     text-decoration: none
 
+    vertical-align: top
+
 %x
     content: "\f002"
 
 .icon
     &:before
         +icon_font
+
+    &.test:before
+        content: "\f000"
 
     &.plus:before
         content: "\f001"
