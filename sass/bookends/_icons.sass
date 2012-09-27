@@ -15,18 +15,18 @@
     text-decoration: none
 
 %icon_x
-    content: "\f001"
+    content: "\f002"
 
 .icon
     &:before
         +icon_font
 
     &.icon_plus:before
-        content: "\f000"
+        content: "\f001"
     &.icon_x:before
         @extend %icon_x
     &.icon_check:before
-        content: "\f002"
+        content: "\f003"
 
     &.icon_form_close:before
         content: "\f050"
