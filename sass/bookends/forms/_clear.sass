@@ -2,10 +2,12 @@
 //
 // <div class="input_wrap">
 //     <input type="text" placeholder="Search..." >
-//     <span class="close_x"></span>
 // </div>
 
 =clearable($input_height)
+    &.focus .close_wrap
+        display: block
+
     .close_wrap
         position: absolute
         top: 0
@@ -17,6 +19,8 @@
         text-align: center
 
         overflow: hidden
+
+        display: none
 
         .close_x
             +transition(all 0.2s ease-in-out)
