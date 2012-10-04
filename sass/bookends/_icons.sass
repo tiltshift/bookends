@@ -1,27 +1,28 @@
 +webfont('Bookends', 'bookends/bookends-regular-webfont', 'Bookends Regular')
 
-=icon_font
-    +inline-block
+.icon
+    text-align: center
+    &:before
+        +inline-block
 
-    font:
-        family: 'Bookends', sans-serif
-        size: 32px
-        weight: normal
-        style: normal
+        font:
+            size: 32px
+            weight: normal
+            style: normal
 
-    -webkit-font-smoothing: antialiased
+        -webkit-font-smoothing: antialiased
 
-    line-height: 1
-    text-decoration: none
+        line-height: 1
+        text-decoration: none
 
-    vertical-align: top
+        vertical-align: top
 
 %icon_x
     content: "\f002"
 
-.icon
+.bookends
     &:before
-        +icon_font
+        font-family: 'Bookends', sans-serif
 
     &.test:before
         content: "\f000"

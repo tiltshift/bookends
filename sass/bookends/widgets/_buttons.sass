@@ -55,23 +55,12 @@ $horizontal_padding: 10px !default
 
         .icon
             float: left
-            padding-right: $horizontal_padding
 
         & + &
             margin-left: $button_margin
 
         // Border
         border: 1px solid rgba(0,0,0,0.3)
-
-        // Special Buttons
-        &.back
-            .icon
-                +icon_font
-
-                margin-top: -1px
-
-                &:before
-                    content: "<"
 
         // Extend Touch and Click Area
         +before($touch_margin)
