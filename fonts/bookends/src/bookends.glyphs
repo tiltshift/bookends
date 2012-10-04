@@ -100,7 +100,7 @@ nodes = (
 );
 }
 );
-width = 1024.09;
+width = 1024;
 }
 );
 unicode = F002;
@@ -129,10 +129,35 @@ nodes = (
 );
 }
 );
-width = 1028.44;
+width = 1028;
 }
 );
 unicode = F003;
+},
+{
+glyphname = uniF004;
+lastChange = "2012-10-04 16:28:05 +0000";
+layers = (
+{
+layerId = "54DBA722-033D-4E59-BFFB-AE9AD7D6C953";
+name = Regular;
+paths = (
+{
+closed = 1;
+nodes = (
+"0 1078.82 LINE",
+"342.906 735.977 LINE",
+"0.34375 393.258 LINE",
+"171.109 222.43 LINE",
+"684.687 735.977 LINE",
+"170.484 1249.52 LINE"
+);
+}
+);
+width = 684.687;
+}
+);
+unicode = F004;
 },
 {
 glyphname = uniF050;
@@ -213,7 +238,7 @@ nodes = (
 );
 }
 );
-width = 1087.98;
+width = 1087;
 }
 );
 unicode = F050;
