@@ -14,11 +14,11 @@
     &:hover:active, &:hover.selected
         background-color: $background_color
 
-    &:active, &.selected
-        border-color: darken($background_color, 30%)
-        +box-shadow(transparentize(darken($background_color, 30%), .6) 0 0 $height inset, transparentize(darken($background_color, 30%), .3) 0 1px 1px inset, rgba(255,255,255,0.35) 0 1px)
+=slab_active_colors($background_color: $light_blue, $border_color: $blue, $height: 3px)
+    border-color: darken($background_color, 30%)
+    +box-shadow(transparentize(darken($background_color, 30%), .6) 0 0 $height inset, transparentize(darken($background_color, 30%), .3) 0 1px 1px inset, rgba(255,255,255,0.35) 0 1px)
 
-=slab_buttons($height: 3px)
+=slab_buttons($height: 3px, $active: true)
     .button, input[type="submit"]
         +transition(box-shadow .08s ease-in-out, top .08s ease-in-out, border .04s ease-in-out .04s)
         +box-sizing(content-box)
@@ -41,11 +41,21 @@
         &.negative
             +slab_colors($red, $dark_red, $height: $height)
 
-        &:active, &.selected
-            top: 0
-            padding-top: $vertical_padding
-
         &.selected
             cursor: default
 
+        &:active, &.selected
+            padding-top: $vertical_padding
+
         @content
+
+    a.button, input[type="submit"]
+        &:active, &.selected
+            top: 0
+
+            +slab_active_colors($height: $height)
+
+        &.gray
+            +slab_active_colors($light_gray, $dark_gray, $height: $height)
+        &.negative
+            +slab_active_colors($red, $dark_red, $height: $height)
