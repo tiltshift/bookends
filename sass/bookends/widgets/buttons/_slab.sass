@@ -1,8 +1,10 @@
 =slab_colors($background_color: $light_blue, $border_color: $blue, $height: 3px)
     background-color: $background_color
 
-    border-color: $blue lighten($blue, 10%)
-    +box-shadow(rgba(255,255,255,0.3) 0 1px inset, rgba(255,255,255,0.1) 0 0 0 1px inset, $blue 0 1px, lighten($blue, 15%) 0 $height, lighten($blue, 2%) 0 $height + 1px, rgba(0, 0, 0, 0.4) 0 $height + 2px 2px)
+    border-color: $border_color lighten($border_color, 10%)
+    +box-shadow(rgba(255,255,255,0.3) 0 1px inset, rgba(255,255,255,0.1) 0 0 0 1px inset, $border_color 0 1px, lighten($border_color, 15%) 0 $height, lighten($border_color, 2%) 0 $height + 1px, rgba(0, 0, 0, 0.4) 0 $height + 2px 2px)
+    +text-shadow($border_color 0 -1px)
+
 
     background:
         image: none !important
@@ -18,7 +20,7 @@
     border-color: darken($background_color, 30%)
     +box-shadow(transparentize(darken($background_color, 30%), .6) 0 0 $height inset, transparentize(darken($background_color, 30%), .3) 0 1px 1px inset, rgba(255,255,255,0.35) 0 1px)
 
-=slab_buttons($height: 3px, $active: true)
+=slab_buttons($height: 3px)
     .button, input[type="submit"]
         +box-sizing(content-box)
         height: $button_height - $vertical_padding * 2
