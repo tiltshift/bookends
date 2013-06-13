@@ -20,7 +20,7 @@
     border-color: darken($background_color, 30%)
     +box-shadow(transparentize(darken($background_color, 30%), .6) 0 0 $height inset, transparentize(darken($background_color, 30%), .3) 0 1px 1px inset, rgba(255,255,255,0.35) 0 1px)
 
-=slab_buttons($height: 3px)
+=slab_buttons($height: 3px, $radius: 2px)
     .button, input[type="submit"]
         +box-sizing(content-box)
         height: $button_height - $vertical_padding * 2
@@ -28,7 +28,7 @@
         //margin-bottom: $height + 1px
         padding-bottom: $vertical_padding - 1px
 
-        +border-radius(3px)
+        +border-radius($radius)
         border:
             width: 1px 1px 0px
             style: solid

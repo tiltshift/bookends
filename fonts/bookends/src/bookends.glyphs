@@ -160,6 +160,54 @@ width = 684;
 unicode = F004;
 },
 {
+glyphname = uniF005;
+lastChange = "2013-06-11 21:28:33 +0000";
+layers = (
+{
+layerId = "54DBA722-033D-4E59-BFFB-AE9AD7D6C953";
+name = Regular;
+paths = (
+{
+closed = 1;
+nodes = (
+"185.012 1469.34 OFFCURVE",
+"0 1284.27 OFFCURVE",
+"0 1056.02 CURVE SMOOTH",
+"0 827.766 OFFCURVE",
+"413.324 63.9766 OFFCURVE",
+"413.324 63.9766 CURVE SMOOTH",
+"413.324 63.9766 OFFCURVE",
+"826.586 827.766 OFFCURVE",
+"826.586 1056.02 CURVE SMOOTH",
+"826.586 1284.27 OFFCURVE",
+"641.512 1469.34 OFFCURVE",
+"413.324 1469.34 CURVE SMOOTH"
+);
+},
+{
+closed = 1;
+nodes = (
+"291.67 835.758 OFFCURVE",
+"193.072 934.359 OFFCURVE",
+"193.072 1056.02 CURVE SMOOTH",
+"193.072 1177.66 OFFCURVE",
+"291.67 1276.2 OFFCURVE",
+"413.324 1276.2 CURVE SMOOTH",
+"534.916 1276.2 OFFCURVE",
+"633.514 1177.66 OFFCURVE",
+"633.514 1056.02 CURVE SMOOTH",
+"633.514 934.359 OFFCURVE",
+"534.916 835.758 OFFCURVE",
+"413.324 835.758 CURVE SMOOTH"
+);
+}
+);
+width = 826;
+}
+);
+unicode = F005;
+},
+{
 glyphname = uniF020;
 lastChange = "2013-06-07 23:28:42 +0000";
 layers = (
@@ -211,14 +259,14 @@ nodes = (
 );
 }
 );
-width = 1663.93;
+width = 1663;
 }
 );
 unicode = F020;
 },
 {
 glyphname = uniF021;
-lastChange = "2013-06-07 23:29:18 +0000";
+lastChange = "2013-06-13 00:43:10 +0000";
 layers = (
 {
 layerId = "54DBA722-033D-4E59-BFFB-AE9AD7D6C953";
@@ -294,7 +342,7 @@ nodes = (
 );
 }
 );
-width = 1600.07;
+width = 1600;
 }
 );
 unicode = F021;
@@ -392,6 +440,12 @@ name = Regular;
 );
 manufacturer = Tilt/Shift;
 unitsPerEm = 2048;
+userData = {
+GSDimensionPlugin.Dimensions = {
+"54DBA722-033D-4E59-BFFB-AE9AD7D6C953" = {
+};
+};
+};
 versionMajor = 1;
 versionMinor = 1;
 }
