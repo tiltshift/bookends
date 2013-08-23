@@ -1,10 +1,6 @@
 @import global
 +global-reset
 
-// set the font (make sure to import something from the font folder.)
-body
-    +regular
-
 *
     +box-sizing(border-box)
 
@@ -15,11 +11,6 @@ body
 @import mixins
 @import icons
 // @import loading
-
-@import device/narrow
-@import scroll/base
-
-@import forms/base
 
 // Widgets (mixin type only)
 @import widgets/list_item
@@ -32,13 +23,3 @@ body
 @import widgets/modal
 @import widgets/tooltips
 
-// Widget Support
-@import full_width
-
-#mobile
-    position: absolute
-    top: 0
-    left: 0
-    bottom: 0
-    right: 0
-    overflow: hidden
