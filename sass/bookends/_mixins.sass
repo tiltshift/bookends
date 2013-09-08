@@ -1,10 +1,11 @@
 =webfont($name, $filename-base, $svg-name)
-    @font-face
-        /* This declaration targets everything else */
-        font-family: $name
-        src: font-url('#{$filename-base}.eot?#iefix') format('embedded-opentype'), font-url('#{$filename-base}.woff') format('woff'), font-url('#{$filename-base}.ttf') format('truetype'), font-url('#{$filename-base}.svg##{$svg-name}') format('svg')
-        font-weight: normal
-        font-style: normal
+    +font-face($name, inline-font-files('#{$filename-base}.woff', woff, '#{$filename-base}.ttf', truetype), '#{$filename-base}.eot?#iefix', normal, normal)
+    // @font-face
+    //     /* This declaration targets everything else */
+    //     font-family: $name
+    //     src: font-url('#{$filename-base}.eot?#iefix') format('embedded-opentype'), font-url('#{$filename-base}.woff') format('woff'), font-url('#{$filename-base}.ttf') format('truetype'), font-url('#{$filename-base}.svg##{$svg-name}') format('svg')
+    //     font-weight: normal
+    //     font-style: normal
 
 =image($image, $image2x: none, $size: true)
     @if $size
