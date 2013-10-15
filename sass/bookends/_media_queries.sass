@@ -64,3 +64,19 @@
     @else if $device == retina
         @media only screen and (-webkit-min-device-pixel-ratio: 2)
             @content
+
+=phone-only
+    +respond-to(all, $max-width: $screen-xs-max)
+        @content
+
+=tablet-plus
+    +respond-to(all, $min-width: $screen-xs)
+        @content
+
+=mobile-only
+    +respond-to(all, $max-width: $screen-sm-max)
+        @content
+
+=desktop-only
+    +respond-to(all, $min-width: $screen-md)
+        @content
