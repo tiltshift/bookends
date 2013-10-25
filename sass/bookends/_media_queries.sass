@@ -1,13 +1,5 @@
 // A basic media query mixin that makes responsive work simple.
 
-=ipad
-    .ios.wide &
-        @content
-
-=iphone
-    .ios.narrow &
-        @content
-
 =respond-to($device, $min-width: false, $max-width: false)
     @if $min-width
         @media only screen and (min-width : $min-width)
@@ -70,7 +62,7 @@
         @content
 
 =tablet-plus
-    +respond-to(all, $min-width: $screen-xs)
+    +respond-to(all, $min-width: $screen-sm)
         @content
 
 =mobile-only
