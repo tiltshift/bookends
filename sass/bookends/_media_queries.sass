@@ -1,66 +1,25 @@
 // A basic media query mixin that makes responsive work simple.
 
-=ipad
-    .ios.wide &
+=phone-only
+    @media only screen and (max-width : $screen-xs-max)
         @content
 
-=iphone
-    .ios.narrow &
+=tablet-plus
+    @media only screen and (min-width : $screen-sm)
         @content
 
-=respond-to($device, $min-width: false, $max-width: false)
-    @if $min-width
-        @media only screen and (min-width : $min-width)
-            @content
+=mobile-only
+    @media only screen and (max-width : $screen-sm-max)
+        @content
 
-    @else if $max-width
-        @media only screen and (max-width : $max-width)
-            @content
+=desktop-only
+    @media only screen and (min-width : $screen-md)
+        @content
 
-    @else if $device == handheld
-        @media only screen and (min-width : 320px)
-            @content
+=desktop-small
+    @media only screen and (min-width : $screen-md) and (max-width : $screen-lg)
+        @content
 
-    @else if $device == handheld-landscape
-        @media only screen and (min-width : 321px)
-            @content
-
-    @else if $device == handheld-portrait
-        @media only screen and (max-width : 320px)
-            @content
-
-    @else if $device == tablet
-        @media only screen and (min-width : 600px)
-            @content
-
-    @else if $device == tablet-landscape
-        @media only screen and (min-width : 600px) and (orientation : landscape)
-            @content
-
-    @else if $device == tablet-portrait
-        @media only screen and (min-width : 600px) and (orientation : portrait)
-            @content
-
-    @else if $device == tablet-large
-        @media only screen and (min-width : 768px)
-            @content
-
-    @else if $device == tablet-large-landscape
-        @media only screen and (min-width : 768px) and (orientation : landscape)
-            @content
-
-    @else if $device == tablet-large-portrait
-        @media only screen and (min-width : 768px) and (orientation : portrait)
-            @content
-
-    @else if $device == desktop
-        @media only screen and (min-width : 1124px)
-            @content
-
-    @else if $device == desktop-large
-        @media only screen and (min-width : 1824px)
-            @content
-
-    @else if $device == retina
-        @media only screen and (-webkit-min-device-pixel-ratio: 2)
-            @content
+=desktop-large
+    @media only screen and (min-width : $screen-lg)
+        @content
