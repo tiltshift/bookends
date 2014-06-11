@@ -1,7 +1,7 @@
 =webfont($name, $filename-base, $svg-name)
     +font-face($name, inline-font-files('#{$filename-base}.woff', woff, '#{$filename-base}.ttf', truetype), '#{$filename-base}.eot', normal, normal)
 
-=image($image, $image2x: none, $size: true)
+=image($image, $image2x: none, $size: true, $inline: false)
     @if $size
         display: inline-block
         width: image-width($image)
@@ -9,12 +9,20 @@
         overflow: hidden
         height: 0
     background:
-        image: image-url($image)
+        @if $inline
+            image: inline-image($image)
+        @else
+            image: image-url($image)
+
         repeat: no-repeat
 
     @if $image2x
         @media (-webkit-min-device-pixel-ratio: 2)
-            background-image: image-url($image2x)
+            background:
+                @if $inline
+                    image: inline-image($image2x)
+                @else
+                    image: image-url($image2x)
             +background-size(image-width($image), image-height($image))
 
 =icon($image: none)
