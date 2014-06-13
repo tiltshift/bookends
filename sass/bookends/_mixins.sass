@@ -1,5 +1,5 @@
-=webfont($name, $filename-base, $svg-name)
-    +font-face($name, inline-font-files('#{$filename-base}.woff', woff, '#{$filename-base}.ttf', truetype), '#{$filename-base}.eot', normal, normal)
+=webfont($name, $filename-base, $weight: 400, $style: normal)
+    +font-face($name, inline-font-files('#{$filename-base}.woff', woff, '#{$filename-base}.ttf', truetype), '#{$filename-base}.eot', $weight, $style)
 
 =image($image, $image2x: none, $size: true, $inline: false)
     @if $size
