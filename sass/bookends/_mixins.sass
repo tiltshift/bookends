@@ -45,7 +45,7 @@
     -webkit-text-stroke-width: $stroke-width
     -webkit-text-stroke-color: $stroke-color
 
-=before($offset: none, $top: none, $right: none, $bottom: none, $left: none)
+=before($offset: none, $top: none, $right: none, $bottom: none, $left: none, $pointer_events: none)
     &:before
         position: absolute
 
@@ -70,7 +70,7 @@
             left: $offset
 
         content: " "
-        pointer-events: none
+        pointer-events: $pointer_events
 
         @content
 
