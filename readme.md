@@ -1,1 +1,6 @@
-A base collection of static files to be used with doppelganger or any cross platform project.
+A simple base for any desktop/web app project.
+
+- Normalization
+- Sane Defaults
+- Mixins
+- Simple Icon Font (optional)
