@@ -18,12 +18,35 @@ html
     // Not currently enabled on android
     // http://www.marco.org/2012/11/15/text-rendering-optimize-legibility
 
-
 body
   position: relative
   width: 100%
   height: 100%
 
-  color: $text
-
   overflow: auto
+
+  font-family: $font_family_sans_serif
+  font-size: $font_size
+  line-height: $line_height_base
+  color: $text_color
+  background-color: $body_background_color
+
+// Reset fonts for relevant elements
+
+input,
+button,
+select,
+textarea
+  font-family: inherit
+  font-size: inherit
+  line-height: inherit
+
+// Images
+
+img
+  vertical-align: middle
+
+// Perfect circle
+
+.circle
+  border-radius: 50%

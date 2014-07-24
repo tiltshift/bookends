@@ -1,29 +1,33 @@
 // A basic media query mixin that makes responsive work simple.
 
+$phone_max: $tablet_min - 1
+$tablet_max: $desktop_min - 1
+$desktop_max: $desktop_large - 1
+
 =phone-only
-    @media only screen and (max-width : $screen-xs-max)
+    @media only screen and (max-width : $phone_max)
         @content
 
 =tablet-plus
-    @media only screen and (min-width : $screen-sm)
+    @media only screen and (min-width : $tablet_min)
         @content
 
 =mobile-only
-    @media only screen and (max-width : $screen-sm-max)
+    @media only screen and (max-width : $tablet_max)
         @content
 
 =desktop-only
-    @media only screen and (min-width : $screen-md)
+    @media only screen and (min-width : $desktop_min)
         @content
 
 =desktop-small
-    @media only screen and (min-width : $screen-md) and (max-width : $screen-lg)
+    @media only screen and (min-width : $desktop_min) and (max-width : $desktop_max)
         @content
 
 =desktop-large
-    @media only screen and (min-width : $screen-lg)
+    @media only screen and (min-width : $desktop_large)
         @content
 
 =retina
-    @media only screen and (-webkit-min-device-pixel-ratio: 2)
+    @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx)
         @content

@@ -1,7 +1,53 @@
+// Typography
+
+$font_size:  18px !default
+
+$title_size: 20px !default
+$small_font: 16px !default
+
+$light_weight:    100 !default
+$regular_weight:  300 !default
+$bold_weight:     500 !default
+
+$h1_font: $font_size * 1.75    !default
+$h2_font: $font_size * 1.33333 !default
+$h3_font: $font_size * 1.16667 !default
+
+$line_height_base:           1.428571429  !default
+$headings_line_height_base:  1.1          !default
+$headings_font_weight:       $bold_weight !default
+
+$line_height:      round(($font_size * $line_height_base))           !default
+$h1_height:        round(($h1_font   * $headings_line_height_base))  !default
+$h2_height:        round(($h2_font   * $headings_line_height_base))  !default
+$h3_height:        round(($h3_font   * $headings_line_height_base))  !default
+
+$font_family_sans_serif: "Helvetica Neue", Helvetica, Arial, sans-serif !default
+
 // Metrics
 
-$unit: 4px
+$unit: 4px !default
 
 // Colors
 
-// Typography
+$white:   white !default
+$black:   black !default
+
+$green:   #37BF45 !default
+
+$red:     #e64038 !default
+
+$blue:    #1d61f0 !default
+
+$purple:  #c644fc !default
+
+$brand: $blue !default
+
+$body_background_color: $white !default
+$text_color: #61605E           !default
+
+// Media queries breakpoints
+
+$tablet_min: 768px     !default
+$desktop_min: 992px    !default
+$desktop_large: 1200px !default

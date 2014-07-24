@@ -1,6 +1,20 @@
 =webfont($name, $filename-base, $weight: 400, $style: normal)
   +font-face($name, inline-font-files('#{$filename-base}.woff', woff, '#{$filename-base}.ttf', truetype), '#{$filename-base}.eot', $weight, $style)
 
+=light
+  font-weight: $light_weight
+
+=regular
+  font-weight: $regular_weight
+  font-style: normal
+
+=bold
+  font-weight: $bold_weight
+
+=small_caps
+  font-variant: small-caps
+  text-transform: lowercase
+
 =single_line
   display: block
   overflow: hidden
@@ -19,3 +33,9 @@
 
 =antialiased
   -webkit-font-smoothing: antialiased
+
+=text_stroke($stroke-width, $stroke-color, $text-color: black, $fill-fallback: $text-color)
+  color: $text-color
+  -webkit-text-fill-color: $fill-fallback // Will override color (regardless of order)
+  -webkit-text-stroke-width: $stroke-width
+  -webkit-text-stroke-color: $stroke-color

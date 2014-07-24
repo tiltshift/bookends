@@ -1,55 +1,27 @@
-// Typography
-
-html
-    font-size: $base_font
-
-body
-    // using http://aestheticallyloyal.com/public/optimize-legibility/ this may need to be moved to only H* tags at some point.
-    text-rendering: optimizeLegibility
-    font-size: 1rem
-
-h1
-    +bold
-    font-size: 24px
-    line-height: $base_leading
-h2
-    +regular
-    font-size: 20px
-    line-height: $base_leading
-
-h4
-    +bold
-    font-size: 13px
-    line-height: $header_height
-
-p
-    +regular
-    font-size:  $base_font
-    line-height: $base_leading
-
-    margin-top: 0
-
-    a
-        color: $dark_text
-
-        &.active, .mouse &:active
-            position: relative
-            top: 1px
-
-p.small
-    +regular
-    font-size:  12px
-    line-height: 15px
-
-    margin-top: 0
-
-p, ul
-    margin-bottom: $base_leading
+h1, h2, h3, %heading_spacing
+  margin-top: $line_height
+  margin-bottom: ($line_height / 2)
 
 .ord
-    font-size: .7em
-    vertical-align: .5em
-    line-height: .7em
+  font-size: 80%
+  vertical-align: 10%
 
-.caps
-    font-variant: small-caps
+p
+  +regular
+
+p + p
+  margin-top: $line_height
+
+h3
+  +small_caps
+
+ul
+  +regular
+  padding-left: $content_inset*2
+
+  li + li
+    padding-top: $object_spacing
+
+hr
+  border-top: 1px solid $ui_lowlight
+  border-bottom: 1px solid $ui_highlight
