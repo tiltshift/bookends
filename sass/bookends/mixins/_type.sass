@@ -1,19 +1,79 @@
 =webfont($name, $filename-base, $weight: 400, $style: normal)
   +font-face($name, inline-font-files('#{$filename-base}.woff', woff, '#{$filename-base}.ttf', truetype), '#{$filename-base}.eot', $weight, $style)
 
+// shortcuts to font weight
+
+=thin
+  font-weight: $thin_weight
+
 =light
   font-weight: $light_weight
 
 =regular
   font-weight: $regular_weight
-  font-style: normal
+
+=medium
+  font-weight: $medium_weight
 
 =bold
   font-weight: $bold_weight
 
-=small_caps
-  font-variant: small-caps
-  text-transform: lowercase
+=black
+  font-weight: $black_weight
+
+// Standard Styles
+
+=display1
+  +medium
+  font-size: 50px
+
+=display2
+  +medium
+  font-size: 30px
+
+=heading
+  // for use mainly inside <header> elements.
+  +medium
+  font-size: 20px
+
+=section_head
+  // for use inside <sections> to label contents
+  +medium
+  font-size: 14px
+  text-transform: uppercase
+
+=title
+  // List items, Important stand alone info, etc.
+  +medium
+  font-size: 20px
+
+  +desktop-only
+    font-size: 16px
+
+=subtitle
+  // for use directly under titles for secondary info
+  +light
+
+  font-size: 16px
+
+  +desktop-only
+    font-size: 14px
+
+=body
+  +regular
+  font-size: 18px
+
+  +desktop-only
+    font-size: 16px
+
+=caption
+  +light
+  font-size: 12px
+
+=button_type
+  +title
+
+// Helpful mixins
 
 =single_line
   display: block
