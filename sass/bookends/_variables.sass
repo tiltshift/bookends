@@ -58,3 +58,12 @@ $body_background_color: $white      !default
 $tablet_min: 768px     !default
 $desktop_min: 992px    !default
 $desktop_large: 1200px !default
+
+// fix for overflow and rounded corners with overflow
+%rounded_corner_fix
+  // make sure rounded corners on $parent clip the loading div.
+  // http://stackoverflow.com/questions/5736503/how-to-make-css3-rounded-corners-hide-overflow-in-chrome-opera
+
+  overflow: hidden
+  -webkit-mask-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAA5JREFUeNpiYGBgAAgwAAAEAAGbA+oJAAAAAElFTkSuQmCC)
+
