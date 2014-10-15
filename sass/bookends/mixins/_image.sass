@@ -31,3 +31,16 @@
         @else
           image: image-url($image2x)
         size: image-width($image) image-height($image)
+
+=svg($svg, $width, $height, $inline: false)
+  width: $width
+  height: $height
+
+  background:
+    size: contain
+    repeat: no-repeat
+
+    @if $inline
+      image: inline-image($svg)
+    @else
+      image: image-url($svg)
