@@ -1,0 +1,14 @@
+// add this mixin at root to remove the full window bounce.
+// Useful for webapps where you want to control scroll.
+
+=no_bounce
+  html
+    width: 100%
+    height: 100%
+    overflow: hidden
+  body
+    position: relative
+    width: 100%
+    height: 100%
+
+    overflow: auto
