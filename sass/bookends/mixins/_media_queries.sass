@@ -12,6 +12,10 @@ $desktop_max: $desktop_large - 1
     @media only screen and (min-width : $tablet_min)
         @content
 
+=tablet-only
+    @media only screen and (min-width : $tablet_min) and (max-width : $tablet_max)
+        @content
+
 =mobile-only
     @media only screen and (max-width : $tablet_max)
         @content
