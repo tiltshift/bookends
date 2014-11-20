@@ -7,8 +7,8 @@
   max-width: 100% // Part 1: Set a maximum relative to the parent
   height: auto // Part 2: Scale the height according to the width, otherwise you get stretching
 
-=image($image, $image2x: false, $size: true, $inline: false)
-  @if $size
+=image($image, $image2x: false, $resize_element: true, $inline: false, $contain: false)
+  @if $resize_element
     display: inline-block
     width: image-width($image)
     padding-top: image-height($image)
@@ -22,7 +22,9 @@
       image: image-url($image)
 
     repeat: no-repeat
-    size: contain
+
+    @if $contain
+      size: contain
 
   @if $image2x
     @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx)
