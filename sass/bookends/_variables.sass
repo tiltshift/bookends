@@ -23,7 +23,14 @@ $font_family_sans_serif: "Helvetica Neue", Helvetica, Arial, sans-serif !default
 
 // Metrics
 
-$unit: 4px !default
+$base_unit:       4px !default
+$object_spacing:  $base_unit*2 !default
+$content_inset:   $base_unit*4 !default
+
+$min_touch_size:  48px !default
+
+$header_height_mobile:  $min_touch_size !default
+$header_height_desktop: 64px !default
 
 // Colors
 
@@ -39,7 +46,6 @@ $secondary_dark:  #A32624 !default
 $secondary_light: #FDA986 !default
 
 // Gray
-// For now we're not prefixing these with gray because we have such a simple pallet
 
 $gray:            #494F50 !default
 $light_gray:      #878D8F !default
