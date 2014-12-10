@@ -6,11 +6,33 @@ h1, h2, h3, %heading_spacing
   font-size: 80%
   vertical-align: 10%
 
+h1, p
+  padding: 0 $content_inset
+
+h1
+  font-size: 43px
+
 p
-  +body
+  +medium
+  +antialiased
+
+  color: $body_text_color
+
+  font-size: 18px
+
+  padding: 0 $content_inset
+
+  a
+    +transition(all, 0.3s)
+    color: $text_color
+    border-bottom: 2px solid $placeholder
+
+    &:hover
+      border-bottom-color: $primary
 
 p + p
   margin-top: $type_spacing_top
+  margin-bottom: $type_spacing_top
 
 ul
   +body
