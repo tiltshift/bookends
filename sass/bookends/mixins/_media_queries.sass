@@ -32,6 +32,14 @@ $desktop_max: $desktop_large - 1
     @media only screen and (min-width : $desktop_large)
         @content
 
+=protrait
+    @media screen and (orientation:portrait)
+        @content
+
+=landscape
+    @media screen and (orientation:landscape)
+        @content
+
 =retina
     @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx)
         @content
