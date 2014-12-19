@@ -1,3 +1,5 @@
+// Webfont mixin for simpler webfont calls
+
 =webfont($name, $filename-base, $weight: 400, $style: normal)
   +font-face($name, inline-font-files('#{$filename-base}.woff', woff, '#{$filename-base}.ttf', truetype), '#{$filename-base}.eot', $weight, $style)
 
@@ -21,75 +23,6 @@
 =black
   font-weight: $black_weight
 
-// Standard Styles
-
-=display1
-  +medium
-  font-size: 50px
-
-=display2
-  +medium
-  font-size: 30px
-
-=heading
-  // for use mainly inside <header> elements.
-  +medium
-  font-size: 20px
-
-=section_head
-  // for use inside <sections> to label contents
-  +medium
-
-  font-size: 20px
-  font-variant: small-caps
-  text-transform: lowercase
-
-=title
-  // List items, Important stand alone info, etc.
-  +regular
-  font-size: 20px
-
-  +desktop-only
-    +bold
-    font-size: 16px
-
-=subtitle
-  // for use directly under titles for secondary info
-  +light
-
-  font-size: 16px
-
-  +desktop-only
-    font-size: 14px
-
-=body
-  +regular
-  font-size: 16px
-
-=caption
-  +regular
-  font-size: 13px
-
-// UI Type
-
-=list_item_type
-  +medium
-  font-size: 16px
-
-=button_type
-  +body
-  +medium
-
-  +desktop-only
-    +bold
-
-=form_type
-  +regular
-  font-size: 20px
-
-  +desktop-only
-    font-size: 16px
-
 // Helpful mixins
 
 =single_line
@@ -107,9 +40,6 @@
   text-shadow: none
   background-color: transparent
   border: 0
-
-=antialiased
-  -webkit-font-smoothing: antialiased
 
 =text_stroke($stroke-width, $stroke-color, $text-color: black, $fill-fallback: $text-color)
   color: $text-color

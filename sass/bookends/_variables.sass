@@ -1,10 +1,8 @@
 // Typography
 
-$font_size:          18px !default
-$font_size_small:    floor(($font_size * 0.85)) !default
+$font_family: "Helvetica Neue", Helvetica, Arial, sans-serif !default
 
-$title_size: 20px !default
-$small_font: 16px !default
+// Weights
 
 $thin_weight:     100 !default
 $light_weight:    300 !default
@@ -13,15 +11,23 @@ $medium_weight:   500 !default
 $bold_weight:     700 !default
 $black_weight:    900 !default
 
-$line_height_base:  1.428571429                             !default
-$line_height:       round(($font_size * $line_height_base)) !default
+// Values for body type [ http://www.gridlover.net/app/ ]
 
-$type_spacing_top: $line_height
-$type_spacing_bottom: ($line_height / 2)
+$font_size:          18px !default
+$line_height:        26px !default
 
-$font_family_sans_serif: "Helvetica Neue", Helvetica, Arial, sans-serif !default
+$h1:                 51px !default
+$h2:                 36px !default
+$h3:                 25px !default
+$h4:                 18px !default
 
-$paragraph_width: 620px
+$paragraph_width:    620px !default
+
+// Values for UI type
+
+$title_size: 20px !default
+$small_font: 16px !default
+
 
 // Metrics
 
@@ -33,6 +39,7 @@ $min_touch_size:  48px !default
 
 $header_height_mobile:  $min_touch_size !default
 $header_height_desktop: 64px !default
+
 
 // Colors
 
@@ -57,9 +64,10 @@ $placeholder:     #CDD4D6 !default
 
 // Defaults
 
-$text_color:            #4d4d4d       !default
+$text_color:            #4d4d4d     !default
 $text_color_light:      $light_gray !default
 $body_background_color: $white      !default
+
 
 // Media queries breakpoints
 

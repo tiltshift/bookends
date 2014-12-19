@@ -1,26 +1,28 @@
-h1, h2, h3, %heading_spacing
-  margin-top: $type_spacing_top
-  margin-bottom: $type_spacing_bottom
+h1, h2
+  line-height: $line_height * 2
+  margin-top: $line_height * 2
+  margin-bottom: $line_height
 
-.ord
-  font-size: 80%
-  vertical-align: 10%
-
-h1, p
-  padding: 0 $content_inset
+h3, h4
+  line-height: $line_height
+  margin-top: $line_height
+  margin-bottom: $line_height
 
 h1
-  font-size: 43px
+  font-size: $h1
+
+h2
+  font-size: $h2
+
+h3
+  font-size: $h3
+
+h4
+  font-size: $h4
 
 p
   +medium
-  +antialiased
-
-  color: $body_text_color
-
-  font-size: 18px
-
-  padding: 0 $content_inset
+  font-size: $font_size
 
   a
     +transition(all, 0.3s)
@@ -30,20 +32,36 @@ p
     &:hover
       border-bottom-color: $primary
 
-p + p
-  margin-top: $type_spacing_top
-  margin-bottom: $type_spacing_top
+p, ul, ol, pre, table, blockquote
+  margin-top: $line_height
+  mnrgin-bottom: $line_height
+
+ul ul, ol ol, ul ol, ol ul
+  margin-top: 0
+  margin-bottom: 0
+
+b, strong, em, small, code
+  line-height: 1
+
+sup, sub
+  vertical-align: baseline
+  position: relative
+  top: -0.4em
+
+sub
+  top: 0.4em
+
+h1, h2, h3, h4, p
+  color: $body_text_color
+
+  padding: 0 $content_inset
 
 ul
-  +body
   padding-left: $content_inset*2
 
-  li + li
-    padding-top: $object_spacing
-
 hr
-  border-top: 1px solid black
+  border-top: 1px solid
   border-bottom: 1px solid white
 
-small, .small
-  +caption
+small
+  font-size: $small_font
