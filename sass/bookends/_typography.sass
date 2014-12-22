@@ -1,3 +1,14 @@
+h1, h2, h3, h4, h5, p
+  max-width: $paragraph_width
+
+  a
+    +transition(all, 0.3s)
+    color: $text_color
+    border-bottom: 2px solid $placeholder
+
+    &:hover
+      border-bottom-color: $primary
+
 h1, h2
   line-height: $line_height * 2
   margin-top: $line_height * 2
@@ -24,19 +35,13 @@ h4
   +bold
   font-size: $h4
 
-p
+h5
   +regular
   font-size: $font_size
 
-  max-width: $paragraph_width
-
-  a
-    +transition(all, 0.3s)
-    color: $text_color
-    border-bottom: 2px solid $placeholder
-
-    &:hover
-      border-bottom-color: $primary
+p
+  +regular
+  font-size: $font_size
 
 p, ul, ol, pre, table, blockquote
   margin-top: $line_height
