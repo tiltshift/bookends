@@ -9,20 +9,26 @@ h3, h4
   margin-bottom: $line_height
 
 h1
+  +regular
   font-size: $h1
 
 h2
+  +medium
   font-size: $h2
 
 h3
+  +medium
   font-size: $h3
 
 h4
+  +bold
   font-size: $h4
 
 p
-  +medium
+  +regular
   font-size: $font_size
+
+  max-width: $paragraph_width
 
   a
     +transition(all, 0.3s)
