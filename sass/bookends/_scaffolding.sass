@@ -16,12 +16,17 @@ html
     // http://www.marco.org/2012/11/15/text-rendering-optimize-legibility
 
 body
+  position: relative
+
   font-family: $font_family
   font-size: $font_size
 
   line-height: $line_height
   color: $text_color
   background-color: $body_background_color
+
+  &.disable_scroll
+    overflow: hidden
 
 // Reset fonts for relevant elements
 
