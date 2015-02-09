@@ -1,0 +1,23 @@
+=object_sizing($value: both, $multiplyer: 1)
+  $mobile: $object_height_mobile * $multiplyer
+  $desktop: $object_height_desktop * $multiplyer
+
+  @if $value == both
+    height: $mobile
+    width: $mobile
+
+    +desktop-only
+      height: $desktop
+      width: $desktop
+
+  @else if $value == height
+    height: $mobile
+
+    +desktop-only
+      height: $desktop
+
+  @else if $value == width
+    width: $mobile
+
+    +desktop-only
+      width: $desktop
