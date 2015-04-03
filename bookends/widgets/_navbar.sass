@@ -64,9 +64,10 @@
 =navbar
   .navbar
     +navbar_height($header_height_mobile, $header_height_desktop)
-    +display-flex
-    +justify-content(space-between)
-    +align-items(center)
+
+    display: flex
+    justify-content: space-between
+    align-items: center
 
     position: relative
 
@@ -88,7 +89,8 @@
     > .title
       +heading
       +single_line
-      +flex-grow(1)
+
+      flex-grow: 1
 
       color: $text_color
 

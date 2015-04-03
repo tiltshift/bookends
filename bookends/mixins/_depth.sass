@@ -13,6 +13,6 @@
     $level_shadow: rgba(0,0,0,0.30) 0 19px 19px, rgba(0,0,0,0.22) 0 15px 6px
 
   @if $text
-    +text-shadow($level_shadow)
+    text-shadow: $level_shadow
   @else
-    +box-shadow($level_shadow)
+    box-shadow: $level_shadow

@@ -21,7 +21,7 @@ legend {
 }
 
 input[type="search"] {
-  @include box-sizing(border-box);
+  box-sizing: border-box;
 }
 
 // Position radios and checkboxes better
