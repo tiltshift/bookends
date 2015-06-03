@@ -15,7 +15,7 @@ legend {
   width: 100%;
   padding: 0;
   margin-bottom: 0;
-  font-size: $font_size;
+  font-size: $body_font;
   line-height: inherit;
   border: 0;
 }
@@ -78,7 +78,7 @@ input[type="checkbox"]:focus {
 output {
   display: block;
   padding-top: 0;
-  font-size: $font_size;
+  font-size: $body_font;
   line-height: $line_height;
   color: $text_color;
 }
