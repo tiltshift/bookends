@@ -1,20 +1,25 @@
-=level($level: 1, $text: false)
+=level($level: 1)
   $level_shadow: null
 
+  @if $level == -1
+    $level_shadow: rgba(0,0,0,0.35) 0 1px 4px inset, rgba(255,255,255,0.7) 0 1px 0, rgba(0,0,0,0.15) 0 1px 0 inset
   @if $level == 0
-    $level_shadow: rgba(0,0,0,0.12) 0 0 0, rgba(0,0,0,0.24) 0 0 0
+    $level_shadow: rgba(0,0,0,0.25) 0 0 0, rgba(0,0,0,0.1) 0 0 0
   @if $level == 1
-    $level_shadow: rgba(0,0,0,0.12) 0 0 3px, rgba(0,0,0,0.24) 0 2px 2px
+    $level_shadow: rgba(0,0,0,0.25) 0 0 4px, rgba(0,0,0,0.1) 0 3px 6px
   @else if $level == 2
-    $level_shadow: rgba(0,0,0,0.18) 0 1px 3px, rgba(0,0,0,0.23) 0 3px 4px
+    $level_shadow: rgba(0,0,0,0.20) 0 3px 8px, rgba(0,0,0,0.1) 0 1px 6px
   @else if $level == 3
-    $level_shadow: rgba(0,0,0,0.19) 0 8px 10px, rgba(0,0,0,0.23) 0 1px 3px
+    $level_shadow: rgba(0,0,0,0.18) 0 8px 14px, rgba(0,0,0,0.23) 0 1px 6px
   @else if $level == 4
-    $level_shadow: rgba(0,0,0,0.25) 0 14px 14px, rgba(0,0,0,0.22) 0 10px 5px
-  @else if $level == 5
-    $level_shadow: rgba(0,0,0,0.30) 0 19px 19px, rgba(0,0,0,0.22) 0 15px 6px
+    $level_shadow: rgba(0,0,0,0.16) 0 14px 18px, rgba(0,0,0,0.15) 0 1px 6px
 
-  @if $text
-    text-shadow: $level_shadow
+  $top_shadow: rgba(255,255,255,0.7) 0 1px 0 inset
+  $bottom_shadow: rgba(0,0,0,0.25) 0 -1px 0 inset
+
+  @if $level >= 1
+    $final_shadow: $top_shadow, $bottom_shadow, $level_shadow
   @else
-    box-shadow: $level_shadow
+    $final_shadow: $level_shadow
+
+  box-shadow: $final_shadow
