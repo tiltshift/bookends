@@ -1,4 +1,4 @@
-h1, h2, h3, h4, h5, p
+h1, h2, h3, h4, h5, p, li
   max-width: $paragraph_width
 
   a
@@ -46,13 +46,23 @@ h5
   +phone-only
     font-size: $body_font/1.3
 
-p
+p, li
   +regular
   font-size: $body_font
 
+p, li
+  code
+    background-color: rgba(0, 0, 0, 0.04)
+    border-radius: 3px
+    padding: 0.2em 0
+
+    &:before, &:after
+      letter-spacing: -0.2em
+      content: "\00a0"
+
 p, ul, ol, pre, table, blockquote
   margin-top: $line_height
-  mnrgin-bottom: $line_height
+  margin-bottom: $line_height
 
 ul ul, ol ol, ul ol, ol ul
   margin-top: 0
@@ -75,10 +85,8 @@ sub
 h1, h2, h3, h4, h5, p
   color: $body_text_color
 
-  padding: 0 $inset
-
 ul
-  padding-left: $inset*2
+  padding-left: $grid*2
 
 hr
   border-top: 1px solid
