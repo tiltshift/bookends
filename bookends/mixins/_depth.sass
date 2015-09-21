@@ -2,7 +2,7 @@
   $level_shadow: null
 
   @if $level == -1
-    $level_shadow: rgba(0,0,0,0.35) 0 1px 4px inset, rgba(255,255,255,0.7) 0 1px 0, rgba(0,0,0,0.15) 0 1px 0 inset
+    $level_shadow: rgba(0,0,0,0.35) 0 1px 4px inset, rgba(255,255,255,0.25) 0 1px 0, rgba(0,0,0,0.15) 0 1px 0 inset
   @if $level == 0
     $level_shadow: rgba(0,0,0,0.25) 0 0 0, rgba(0,0,0,0.1) 0 0 0
   @if $level == 1
@@ -15,7 +15,7 @@
     $level_shadow: rgba(0,0,0,0.16) 0 14px 18px, rgba(0,0,0,0.15) 0 1px 6px
 
   $top_shadow: rgba(255,255,255,0.25) 0 1px 0 inset
-  $bottom_shadow: rgba(0,0,0,0.25) 0 -1px 0 inset
+  $bottom_shadow: rgba(0,0,0,0.15) 0 -1px 0 inset
 
   @if $level >= 1
     $final_shadow: $top_shadow, $bottom_shadow, $level_shadow
