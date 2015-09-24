@@ -3,6 +3,8 @@
 // to create a larger tap area for the given element.
 
 =before($offset: none, $top: none, $right: none, $bottom: none, $left: none, $pointer_events: none)
+  position: relative
+  
   &:before
     position: absolute
 
@@ -32,6 +34,8 @@
     @content
 
 =after($offset: none, $top: none, $right: none, $bottom: none, $left: none, $pointer_events: none)
+  position: relative
+
   &:after
     position: absolute
 
