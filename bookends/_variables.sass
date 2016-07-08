@@ -8,9 +8,9 @@ $grid: 16px !default
 // Typography
 
 // by default we use system fonts
-$font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif !default
-$font-family-serif:      Georgia, "Times New Roman", Times, serif !default
-$font-family-monospace:  Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default
+$font_family_sans_serif: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif !default
+$font_family_serif:      Georgia, "Times New Roman", Times, serif !default
+$font_family_monospace:  Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default
 
 // Values for body type [ http://www.gridlover.net/app/ ] 16/1.5/1.618
 
@@ -26,8 +26,8 @@ $caption_font:    .75rem !default
 
 // max readable widths for paragraphs and forms
 
-$form_width:      $grid*36 !default // 576px
-$paragraph_width: $grid*44 !default // 704px
+$form_width:      $grid * 36 !default // 576px
+$paragraph_width: $grid * 44 !default // 704px
 
 // Metrics
 
@@ -37,15 +37,15 @@ $min_touch_size:  48px !default
 
 $text_color:       #303630
 $ui_text_color:    #545954
-$light_text_color: #6E776E
-$placeholder:      #CDD4D6
+$light_text_color: #6e776e
+$placeholder:      #cdd4d6
 
-$gray:             #494F50
-$light_gray:       #878D8F
-$selected_background: #EBEEF0
-$background:       #FAFAFA
-$stroke:           #BCC6C8
-$light_stroke:     #dce3e4
+$gray:                #494f50
+$light_gray:          #878d8f
+$selected_background: #ebeef0
+$background:          #fafafa
+$stroke:              #bcc6c8
+$light_stroke:        #dce3e4
 
 // Media queries breakpoints
 
@@ -56,9 +56,9 @@ $desktop_large: 1200px !default
 // Mixins
 
 =shadow
-  box-shadow: rgba(0,0,0,0.3) 0 1px 3px
+  box-shadow: rgba(0, 0, 0, .3) 0 1px 3px
 
 =no_shadow
-  box-shadow: rgba(0,0,0,0) 0 0px 0px
+  box-shadow: rgba(0, 0, 0, 0) 0 0 0
 
-$bounce: cubic-bezier(0.295, 0.465, 0.190, 1.060)
+$bounce: cubic-bezier(.295, .465, .19, 1.06)
