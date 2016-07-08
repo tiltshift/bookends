@@ -1,0 +1,77 @@
+/*! adapted from bootstrap 3.2 | MIT License | https://github.com/twbs/bootstrap */
+
+fieldset
+  // Chrome and Firefox set a `min-width: -webkit-min-content;` on fieldsets,
+  // so we reset that to ensure it behaves more like a standard block element.
+  // See https://github.com/twbs/bootstrap/issues/12359.
+  min-width: 0
+  margin: 0
+  padding: 0
+  border: 0
+
+
+legend
+  display: block
+
+  width: 100%
+
+  margin-bottom: 0
+  padding: 0
+  border: 0
+
+  font-size: $body_font
+  line-height: inherit
+
+input
+  [type="search"]
+    box-sizing: border-box
+
+  // Position radios and checkboxes better
+  [type="radio"],
+  [type="checkbox"]
+    margin: 4px 0 0
+    margin-top: 1px \9 // IE8-9
+
+    line-height: normal
+
+  // Set the height of file controls to match text inputs
+  [type="file"]
+    display: block
+
+  // Make range inputs behave like textual form controls
+  [type="range"]
+    display: block
+    width: 100%
+
+  // Focus for file, radio, and checkbox
+  [type="file"]:focus,
+  [type="radio"]:focus,
+  [type="checkbox"]:focus
+    // Default
+    outline: thin dotted
+    // WebKit
+    outline: 5px auto -webkit-focus-ring-color
+    outline-offset: -2px
+
+// Make multiple select elements height not fixed
+select[multiple],
+select[size]
+  height: auto
+
+select
+  display: inline-block
+  width: 100%
+
+  margin: 0
+  padding: 0
+  border: 0
+
+  outline: 0
+  cursor: pointer
+
+  appearance: none
+
+// Adjust output element
+output
+  display: block
+  padding-top: 0
