@@ -11,40 +11,7 @@ html
   // remove the tap highlight on mobile
   -webkit-tap-highlight-color: transparent
 
+  // Improve text rendering on apple devices
+  // Not currently enabled on android (http://www.marco.org/2012/11/15/text-rendering-optimize-legibility)
   &.desktop, &.ios
     text-rendering: optimizeLegibility
-
-    // Not currently enabled on android
-    // http://www.marco.org/2012/11/15/text-rendering-optimize-legibility
-
-body
-  position: relative
-
-  font-family: $font_family
-  font-size: $ui_font
-
-  line-height: $line_height
-  color: $text_color
-  background-color: $body_background_color
-
-  &.disable_scroll
-    overflow: hidden
-
-  &.disable_phone_scroll
-    +phone-only
-      overflow: hidden
-
-// Reset fonts for relevant elements
-
-input,
-button,
-select,
-textarea
-  font-family: inherit
-  font-size: inherit
-  line-height: inherit
-
-// Images
-
-img
-  vertical-align: middle
