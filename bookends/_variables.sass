@@ -1,75 +1,51 @@
+// ** Grid and Metrics **
+// ----------------------
+
+// Bookends uses a 16px grid by default
+
+$grid: 16px !default
+
 // Typography
 
-$font_family: "Helvetica Neue", Helvetica, Arial, sans-serif !default
+// by default we use system fonts
+$font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif !default
+$font-family-serif:      Georgia, "Times New Roman", Times, serif !default
+$font-family-monospace:  Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default
 
-// Weights
+// Values for body type [ http://www.gridlover.net/app/ ] 16/1.5/1.618
 
-$hairline_weight: 100 !default
-$thin_weight:     200 !default
-$light_weight:    300 !default
-$regular_weight:  400 !default
-$medium_weight:   500 !default
-$semibold_weight: 600 !default
-$bold_weight:     700 !default
-$black_weight:    900 !default
+$body_font:       1rem !default
+$line_height:     1.5rem !default
 
-// Values for body type [ http://www.gridlover.net/app/ ]
+$h1:              2.5rem !default
+$h2:              1.625rem !default
+$h3:              1.125 !default
 
-$body_font:       18px !default
+$small_font:      .875rem !default
+$caption_font:    .75rem !default
 
-$h1:              51px !default
-$h2:              36px !default
-$h3:              25px !default
-$h4:              18px !default
+// max readable widths for paragraphs and forms
 
-$paragraph_width: 620px !default
-
-// Values for UI type
-
-$ui_font:         16px !default
-$title_font:      20px !default
-$small_font:      14px !default
-$caption_font:    12px !default
+$form_width:      $grid*36 !default // 576px
+$paragraph_width: $grid*44 !default // 704px
 
 // Metrics
 
-$grid: 14px !default
-
 $min_touch_size:  48px !default
-
-$header_height_mobile:  $min_touch_size !default
-$header_height_desktop: 64px !default
-
-$object_height_desktop: 40px !default
-$object_height_mobile: 44px !default
-
-// Colors
-
-$white:           #ffffff !default
-$black:           #000000 !default
-
-$primary:         #3439C5 !default
-$primary_dark:    #282C99 !default
-$primary_light:   #595AD3 !default
-
-$secondary:       #DD3620 !default
-$secondary_dark:  #A32624 !default
-$secondary_light: #FDA986 !default
 
 // Gray
 
-$gray:            #494F50 !default
-$light_gray:      #878D8F !default
-$background:      #FAFAFA !default
-$stroke:          #BCC6C8 !default
-$placeholder:     #CDD4D6 !default
+$text_color:       #303630
+$ui_text_color:    #545954
+$light_text_color: #6E776E
+$placeholder:      #CDD4D6
 
-// Defaults
-
-$text_color:            #4d4d4d     !default
-$text_color_light:      $light_gray !default
-$body_background_color: $white      !default
-
+$gray:             #494F50
+$light_gray:       #878D8F
+$selected_background: #EBEEF0
+$background:       #FAFAFA
+$stroke:           #BCC6C8
+$light_stroke:     #dce3e4
 
 // Media queries breakpoints
 
@@ -77,12 +53,12 @@ $tablet_min: 768px     !default
 $desktop_min: 992px    !default
 $desktop_large: 1200px !default
 
-// fix for overflow and rounded corners with overflow
-%rounded_corner_fix
-  // make sure rounded corners on $parent clip the loading div.
-  // http://stackoverflow.com/questions/5736503/how-to-make-css3-rounded-corners-hide-overflow-in-chrome-opera
+// Mixins
 
-  overflow: hidden
+=shadow
+  box-shadow: rgba(0,0,0,0.3) 0 1px 3px
 
-  // be careful of this on elements with touch scrolling
-  -webkit-mask-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAA5JREFUeNpiYGBgAAgwAAAEAAGbA+oJAAAAAElFTkSuQmCC)
+=no_shadow
+  box-shadow: rgba(0,0,0,0) 0 0px 0px
+
+$bounce: cubic-bezier(0.295, 0.465, 0.190, 1.060)
