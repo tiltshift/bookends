@@ -12,24 +12,25 @@ fieldset {
 
 legend {
   display: block;
+  font-size: $body_font;
   width: 100%;
   padding: 0;
   margin-bottom: 0;
-  font-size: $body_font;
+
   line-height: inherit;
   border: 0;
 }
 
-input[type="search"] {
+[type="search"] {
   box-sizing: border-box;
 }
 
 // Position radios and checkboxes better
-input[type="radio"],
-input[type="checkbox"] {
+[type="radio"],
+[type="checkbox"] {
+  line-height: normal;
   margin: 4px 0 0;
   margin-top: 1px \9; // IE8-9
-  line-height: normal;
 }
 
 // Set the height of file controls to match text inputs
