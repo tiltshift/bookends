@@ -1,4 +1,15 @@
-// Reset the box-sizing to border box
+// Base Styles for all sites.
+// Note, this borrows a lot from bootstrap's `_reboot` while trying to keep things
+// a bit ligher so its easer for us to customize
+
+
+// Reset the box-sizing
+//
+// Change from `box-sizing: content-box` to `border-box` so that when you add
+// `padding` or `border`s to an element, the overall declared `width` does not
+// change. For example, `width: 100px;` will always be `100px` despite the
+// `border: 10px solid red;` and `padding: 20px;`.
+//
 // https://css-tricks.com/box-sizing/
 
 html
@@ -7,11 +18,84 @@ html
 *, *:before, *:after
   box-sizing: inherit
 
+// Make viewport responsive
+//
+// @viewport is needed because IE 10+ doesn't honor <meta name="viewport"> in
+// some cases. See http://timkadlec.com/2012/10/ie10-snap-mode-and-responsive-design/.
+// Eventually @viewport will replace <meta name="viewport">.
+//
+// However, `device-width` is broken on IE 10 on Windows (Phone) 8,
+// (see http://timkadlec.com/2013/01/windows-phone-8-and-device-width/ and https://github.com/twbs/bootstrap/issues/10497)
+// and the fix for that involves a snippet of JavaScript to sniff the user agent
+// and apply some conditional CSS.
+//
+// See http://getbootstrap.com/getting-started/#support-ie10-width for the relevant hack.
+//
+// Wrap `@viewport` with `@at-root` for when folks do a nested import (e.g.,
+// `.class-name { @import "bootstrap"; }`).
+
+@at-root
+  @-ms-viewport
+    width: device-width
+
 html
-  // remove the tap highlight on mobile
-  -webkit-tap-highlight-color: transparent
+  // Sets the default `font-size` to the grid size. This should be the base for `rem` type scales.
+
+  font-size: $grid
+
+  // As a side-effect of setting the @viewport above,
+  // IE11 & Edge make the scrollbar overlap the content and automatically hide itself when not in use.
+  // Unfortunately, the auto-showing of the scrollbar is sometimes too sensitive,
+  // thus making it hard to click on stuff near the right edge of the page.
+  // So we add this style to force IE11 & Edge to use a "normal", non-overlapping, non-auto-hiding scrollbar.
+  // See https://github.com/twbs/bootstrap/issues/18543
+
+  -ms-overflow-style: scrollbar
+
+  // Changes the default tap highlight to be completely transparent in iOS.
+  -webkit-tap-highlight-color: rgba(0,0,0,0)
 
   // Improve text rendering on apple devices
   // Not currently enabled on android (http://www.marco.org/2012/11/15/text-rendering-optimize-legibility)
   &.desktop, &.ios
     text-rendering: optimizeLegibility
+
+body
+  font-family: $font-family-sans-serif
+  font-size: $body_font
+  line-height: $line_height
+
+// Suppress the focus outline on elements that cannot be accessed via keyboard.
+// This prevents an unwanted focus outline from appearing around elements that
+// might still respond to pointer events.
+//
+// Credit: https://github.com/suitcss/base
+[tabindex="-1"]:focus
+  outline: none !important
+
+// By default, `<img>`s are `inline-block`. This assumes that, and vertically
+// centers them. This won't apply should you reset them to `block` level.
+img
+  vertical-align: middle
+
+// iOS "clickable elements" fix for role="button"
+//
+// Fixes "clickability" issue (and more generally, the firing of events such as focus as well)
+// for traditionally non-focusable elements with role="button"
+// see https://developer.mozilla.org/en-US/docs/Web/Events/click#Safari_Mobile
+
+[role="button"]
+  cursor: pointer
+
+// Avoid 300ms click delay on touch devices that support the `touch-action` CSS property.
+//
+// In particular, unlike most other browsers, IE11+Edge on Windows 10 on touch devices and IE Mobile 10-11
+// DON'T remove the click delay when `<meta name="viewport" content="width=device-width">` is present.
+// However, they DO support removing the click delay via `touch-action: manipulation`.
+// See:
+// * http://v4-alpha.getbootstrap.com/content/reboot/#click-delay-optimization-for-touch
+// * http://caniuse.com/#feat=css-touch-action
+// * http://patrickhlauke.github.io/touch/tests/results/#suppressing-300ms-delay
+
+a, area, button, [role="button"], input, label, select, summary, textarea
+  touch-action: manipulation
