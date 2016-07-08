@@ -2,6 +2,7 @@ options:
   formatter: stylish
 files:
   include: '**/*.s+(a|c)ss'
+  ignore: 'libs/normalize/*'
 rules:
   # Extends
   extends-before-mixins: 1
@@ -19,7 +20,7 @@ rules:
   # Disallows
   no-attribute-selectors: 0
   no-color-keywords: 1
-  no-color-literals: 1
+  no-color-literals: 0
   no-combinators: 0
   no-css-comments: 1
   no-debug: 1
@@ -32,28 +33,37 @@ rules:
   no-invalid-hex: 1
   no-mergeable-selectors: 1
   no-misspelled-properties: 1
-  no-qualifying-elements: 1
+  no-qualifying-elements:
+    - 1
+    - allow-element-with-attribute: 1
   no-trailing-whitespace: 1
   no-trailing-zero: 1
   no-transition-all: 1
   no-universal-selectors: 0
   no-url-protocols: 1
-  no-vendor-prefixes: 1
+  no-vendor-prefixes:
+    - 1
+    - ignore-non-standard: 1
   no-warn: 1
   property-units: 0
 
   # Nesting
-  force-attribute-nesting: 1
+  force-attribute-nesting: 0
   force-element-nesting: 1
-  force-pseudo-nesting: 1
+  force-pseudo-nesting: 0
 
   # Name Formats
   class-name-format: 1
   function-name-format: 1
   id-name-format: 0
-  mixin-name-format: 1
+  mixin-name-format:
+    - 1
+    - convention: snakecase
+    - allow-leading-underscore: false
   placeholder-name-format: 1
-  variable-name-format: 1
+  variable-name-format:
+    - 1
+    - convention: snakecase
 
   # Style Guide
   attribute-quotes: 1
@@ -67,9 +77,13 @@ rules:
   indentation: 1
   leading-zero: 1
   nesting-depth: 1
-  property-sort-order: 1
+  property-sort-order:
+    - 1
+    - order: smacss
   pseudo-element: 1
-  quotes: 1
+  quotes:
+    - 1
+    - style: double
   shorthand-values: 1
   url-quotes: 1
   variable-for-property: 1
@@ -86,5 +100,4 @@ rules:
   space-around-operator: 1
 
   # Final Items
-  trailing-semicolon: 1
   final-newline: 1
