@@ -1,53 +1,10 @@
-// Webfont mixin for simpler webfont calls
-
-=webfont($name, $filename-base, $weight: 400, $style: normal)
-  +font-face($name, inline-font-files('#{$filename-base}.woff', woff, '#{$filename-base}.ttf', truetype), '#{$filename-base}.eot', $weight, $style)
-
-// shortcuts to font weight
-
-=hairline
-  font-weight: $hairline_weight
-
-=thin
-  font-weight: $thin_weight
-
-=light
-  font-weight: $light_weight
-
-=regular
-  font-weight: $regular_weight
-
-=medium
-  font-weight: $medium_weight
-
-=semibold
-  font-weight: $semibold_weight
-
-=bold
-  font-weight: $bold_weight
-
-=black
-  font-weight: $black_weight
-
-// Helpful mixins
-
+// show an ellipsis if text is wider than its container
 =single_line
   text-overflow: ellipsis
   white-space: nowrap
   overflow: hidden
 
-=multi_line
-  white-space: normal
-
-=hide-text
-  font: #{0/0} a
-  color: transparent
-  text-shadow: none
-  background-color: transparent
-  border: 0
-
-=text_stroke($stroke-width, $stroke-color, $text-color: black, $fill-fallback: $text-color)
-  color: $text-color
-  -webkit-text-fill-color: $fill-fallback // Will override color (regardless of order)
-  -webkit-text-stroke-width: $stroke-width
-  -webkit-text-stroke-color: $stroke-color
+// quick helper to grab all body text elements
+=text_elements
+  h1, h2, h3, h4, h5, p, pre, code
+    @content
