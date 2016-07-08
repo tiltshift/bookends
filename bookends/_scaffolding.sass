@@ -1,9 +1,11 @@
-// Reset the box-sizing
+// Reset the box-sizing to border box
+// https://css-tricks.com/box-sizing/
 
-*, *:before, *:after
+html
   box-sizing: border-box
 
-// Body reset
+*, *:before, *:after
+  box-sizing: inherit
 
 html
   -webkit-tap-highlight-color: transparent
