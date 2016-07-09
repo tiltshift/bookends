@@ -21,8 +21,8 @@ $h1:              2.5rem !default
 $h2:              1.625rem !default
 $h3:              1.125 !default
 
-$small_font:      .875rem !default
-$caption_font:    .75rem !default
+$small_font:      0.875rem !default
+$caption_font:    0.75rem !default
 
 // max readable widths for paragraphs and forms
 
@@ -32,6 +32,10 @@ $paragraph_width: $grid * 44 !default // 704px
 // Metrics
 
 $min_touch_size:  48px !default
+
+// Border Radius
+$radius:                  $grid / 4
+$inner_radius:            $radius / 2
 
 // Gray
 
@@ -53,12 +57,6 @@ $tablet_min: 768px     !default
 $desktop_min: 992px    !default
 $desktop_large: 1200px !default
 
-// Mixins
+// Transitions
 
-=shadow
-  box-shadow: rgba(0, 0, 0, .3) 0 1px 3px
-
-=no_shadow
-  box-shadow: rgba(0, 0, 0, 0) 0 0 0
-
-$bounce: cubic-bezier(.295, .465, .19, 1.06)
+$bounce: cubic-bezier(0.295, 0.465, 0.190, 1.060)

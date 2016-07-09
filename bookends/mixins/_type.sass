@@ -8,3 +8,16 @@
 =text_elements
   h1, h2, h3, h4, h5, p, pre, code
     @content
+
+// add a background color to inline text
+=inline_background($color)
+  margin: 0 0.05rem
+  padding: 0.1rem 0
+
+  border-radius: $inner_radius
+
+  background-color: $color
+
+  &::before, &::after
+    letter-spacing: -0.2em
+    content: "\00a0"
