@@ -3,9 +3,8 @@
 // https://css-tricks.com/snippets/css/clear-fix/
 
 =clearfix
-  &:after, &:before
-    content: ""
+  &::after
     display: table
-
-  &:after
     clear: both
+
+    content: ""

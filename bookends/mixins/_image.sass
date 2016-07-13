@@ -1,7 +1,7 @@
 // Responsive image
 //
 // Keep images from scaling beyond the width of their parents.
-=img-responsive($display: block)
+=img_responsive($display: block)
   display: $display
   width: 100% \9 // Force IE10 and below to size SVG images correctly
   max-width: 100% // Part 1: Set a maximum relative to the parent
@@ -10,10 +10,14 @@
 =image($image, $image2x: false, $resize_element: true, $inline: false, $contain: false)
   @if $resize_element
     display: inline-block
+
     width: image-width($image)
-    padding-top: image-height($image)
-    overflow: hidden
     height: 0
+
+    padding-top: image-height($image)
+
+    overflow: hidden
+
 
   background:
     @if $inline

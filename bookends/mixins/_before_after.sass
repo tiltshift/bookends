@@ -4,8 +4,8 @@
 
 =before($offset: none, $top: none, $right: none, $bottom: none, $left: none, $pointer_events: none)
   position: relative
-  
-  &:before
+
+  &::before
     position: absolute
 
     @if $top != none
@@ -36,7 +36,7 @@
 =after($offset: none, $top: none, $right: none, $bottom: none, $left: none, $pointer_events: none)
   position: relative
 
-  &:after
+  &::after
     position: absolute
 
     @if $top != none
@@ -63,10 +63,3 @@
     pointer-events: $pointer_events
 
     @content
-
-=extra_border($size, $type, $color, $radius: 0, $offset: 0)
-  position: relative
-
-  +before($offset: $offset)
-    +border-radius($radius)
-    border: $size $type $color
