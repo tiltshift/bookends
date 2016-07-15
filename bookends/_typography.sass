@@ -10,21 +10,23 @@ $bold:     700
 $black:    900
 
 //
-// Paragraph Width and Link Styling
+// Paragraph and Link Styling
 //
 
 h1, h2, h3, h4, h5, p, li
   color: $text_color
 
-  a
-    transition: border-bottom-color 0.3s
+a
+  transition: border-bottom-color 0.3s
 
-    border-bottom: 2px solid $placeholder
+  border-bottom: 2px solid $placeholder
 
-    color: $text_color
+  color: $text_color
 
-    &:hover
-      border-bottom-color: $primary
+  text-decoration: none
+
+  &:hover
+    border-bottom-color: $primary
 
 //
 // Headings
