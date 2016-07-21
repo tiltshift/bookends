@@ -38,31 +38,34 @@ h1
 
   font-size: $h1
   font-weight: $bold
-  line-height: $line_height * 3
+  line-height: 1.5
+
+h1 + h2
+  margin-top: -$grid / 2
 
 h2
-  margin-top: $line_height
-  margin-bottom: $line_height
+  margin-top: $line_height * 1.5
+  margin-bottom: 0
+
+  color: $light_text_color
 
   font-size: $h2
-  font-weight: $medium
+  font-weight: $regular
+
+  letter-spacing: -0.01em
+
   line-height: $line_height * 2
 
+h2 + h3
+  margin-top: 0
+
 h3
-  margin-top: $line_height
+  margin-top: $line_height * 1.5
   margin-bottom: 0
 
   font-size: $h3
-  font-weight: $medium
-  line-height: $line_height * 2
-
-h4
-  margin-top: $line_height
-  margin-bottom: 0
-
-  font-size: $body_font
   font-weight: $black
-  line-height: $line_height
+  line-height: 2rem
 
 //
 // Horizontal Rules
@@ -91,8 +94,13 @@ p, li
       content: "\00a0"
 
 p, ul, ol, pre, table, blockquote
-  margin-top: 0
-  margin-bottom: $line_height
+  margin-top: $line_height
+  margin-bottom: 0
+
+  h2 + &, h3 + &
+    margin-top: $grid / 2
+  h1 + h2 + &
+    margin-top: $line_height
 
 ul ul, ol ol, ul ol, ol ul
   margin-top: 0
