@@ -1,45 +1,38 @@
 // A basic media query mixin that makes responsive work simple.
 
-$phone_max: $tablet_min - 1
-$tablet_max: $desktop_min - 1
-$desktop_max: $desktop_large - 1
+$phone_wide:    544px
+$tablet_min:    768px
+$desktop_min:   992px
+$desktop_large: 1200px
 
-=phone-only
-    @media only screen and (max-width : $phone_max)
-        @content
+$phone_max:     $tablet_min - 1
+$tablet_max:    $desktop_min - 1
+$desktop_max:   $desktop_large - 1
 
-=tablet-plus
-    @media only screen and (min-width : $tablet_min)
-        @content
+=phone_only
+  @media only screen and (max-width: $phone_max)
+    @content
 
-=tablet-only
-    @media only screen and (min-width : $tablet_min) and (max-width : $tablet_max)
-        @content
+=tablet_plus
+  @media only screen and (min-width: $tablet_min)
+    @content
 
-=mobile-only
-    @media only screen and (max-width : $tablet_max)
-        @content
+=tablet_only
+  @media only screen and (min-width: $tablet_min) and (max-width: $tablet_max)
+    @content
 
-=desktop-only
-    @media only screen and (min-width : $desktop_min)
-        @content
+=mobile_only
+  @media only screen and (max-width: $tablet_max)
+    @content
 
-=desktop-small
-    @media only screen and (min-width : $desktop_min) and (max-width : $desktop_max)
-        @content
+=desktop_only
+  @media only screen and (min-width: $desktop_min)
+    @content
 
-=desktop-large
-    @media only screen and (min-width : $desktop_large)
-        @content
+=desktop_small
+  @media only screen and (min-width: $desktop_min) and (max-width: $desktop_max)
+    @content
 
-=protrait
-    @media screen and (orientation:portrait)
-        @content
-
-=landscape
-    @media screen and (orientation:landscape)
-        @content
-
-=retina
-    @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx)
-        @content
+=desktop_large
+  @media only screen and (min-width: $desktop_large)
+    @content
