@@ -1,14 +1,5 @@
 // A basic media query mixin that makes responsive work simple.
 
-$phone_wide:    544px
-$tablet_min:    768px
-$desktop_min:   992px
-$desktop_large: 1200px
-
-$phone_max:     $tablet_min - 1
-$tablet_max:    $desktop_min - 1
-$desktop_max:   $desktop_large - 1
-
 =phone_only
   @media only screen and (max-width: $phone_max)
     @content
